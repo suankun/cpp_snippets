@@ -4,6 +4,7 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "array": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "cmath": "cpp"
     }
 }
