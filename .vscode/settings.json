@@ -6,6 +6,8 @@
         "array": "cpp",
         "string_view": "cpp",
         "cmath": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "algorithm": "cpp",
+        "sstream": "cpp"
     }
 }
