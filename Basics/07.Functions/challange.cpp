@@ -40,16 +40,12 @@ int main() {
 }
 
 void print_select_menu() {
-    // char selection {};
     cout << "P - Print numbers" << endl;
     cout << "A - Add number" << endl;
     cout << "M - Display the mean or average of the numbers" << endl;
     cout << "S - Display the smalest number" << endl;
     cout << "L - Display the largest number" << endl;
     cout << "Q - Quit" << endl;
-    // cout << "Enter your choice: ";
-    // cin >> selection;
-    // return selection;
 }
 
 char select() {
