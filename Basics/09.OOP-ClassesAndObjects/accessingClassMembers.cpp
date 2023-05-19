@@ -3,7 +3,7 @@
 using namespace std;
 
 class Teacher {
-    public:
+public:
     string teacher_name;
     string class_name;
     int techer_personal_number;
@@ -12,7 +12,7 @@ class Teacher {
 };
 
 class Student {
-    public:
+public:
     string student_name;
     int student_personal_number;
 
