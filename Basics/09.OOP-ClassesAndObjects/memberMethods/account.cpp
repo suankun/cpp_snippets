@@ -16,7 +16,7 @@ void Account::set_balance() {
     balance = initial_balance;
 }
 
-void Account::get_name() {
+string Account::get_name() {
     cout << "Account name is: " << name << endl;
 }
 

@@ -4,11 +4,10 @@
 using namespace std;
 
 int stray(std::vector<int> numbers) {
-    sort(numbers.begin(), numbers.end());
-    vector<int>::iterator iter;
-    for (iter=numbers.begin(); iter != numbers.end(); iter++) {
-        if (numbers[0]==numbers[1]) return numbers.back();
-        else return numbers.front();
+    int counter {};
+    for (auto num: numbers) {
+        counter = count(numbers.begin(), numbers.end(), num);
+        if (counter == 1) return num;
     }
     return 0;
 }
@@ -39,3 +38,13 @@ int main() {
 //     }
 //     return 0;
 // };
+///////////////////////////////////////////
+// int stray(std::vector<int> numbers) {
+//     sort(numbers.begin(), numbers.end());
+//     vector<int>::iterator iter;
+//     for (iter=numbers.begin(); iter != numbers.end(); iter++) {
+//         if (numbers[0]==numbers[1]) return numbers.back();
+//         else return numbers.front();
+//     }
+//     return 0;
+// }

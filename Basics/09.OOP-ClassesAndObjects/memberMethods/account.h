@@ -11,7 +11,7 @@ private:
 public:
     void set_name();
     void set_balance();
-    void get_name();
+    string get_name();
     void get_balance();
     void deposit();
     void withdraw();
