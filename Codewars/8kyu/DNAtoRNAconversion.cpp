@@ -21,7 +21,7 @@ int main() {
 }
 
 /////////////////////////////////////////////////////
-std::string DNAtoRNA(std::string dna){
-  std::replace(dna.begin(), dna.end(), 'T', 'U');
-  return dna;
-}
+// std::string DNAtoRNA(std::string dna){
+//   std::replace(dna.begin(), dna.end(), 'T', 'U');
+//   return dna;
+// }
