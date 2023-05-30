@@ -35,3 +35,17 @@ int main() {
     return 0;
 }
 
+/////////////////
+// #include <string>
+// #include <numeric>
+// #include <cctype>
+
+// std::string solve(std::string str) {
+//   bool bLower = str.size() <= 2 * std::count_if(str.cbegin(), str.cend(), ::islower);
+  
+//   std::transform(str.begin(), str.end(), str.begin(), [&] (auto x) {
+//     return bLower ? std::tolower(x) : std::toupper(x);
+//   });
+  
+//   return std::move(str);
+// }
