@@ -33,3 +33,20 @@ int main() {
 
     return 0;
 }
+
+///////////////
+using namespace std;
+
+int maxSequence(const vector<int>& arr) {
+	int localmax=0;
+	int globalmax=0;
+	for (int i = 0;i<arr.size();i++)
+	{
+		localmax = localmax + arr[i];
+		if (localmax > globalmax)
+			globalmax = localmax;
+		if (localmax < 0)
+			localmax = 0;
+	}
+	return globalmax;
+}
