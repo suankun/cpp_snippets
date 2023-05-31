@@ -18,3 +18,21 @@ pair<int,int> rowWeights (const vector <int> &weights)
   PAIR.second = second_team;
   return PAIR;
 }
+////////////
+#include <vector>
+#include <utility>
+
+using namespace std; 
+
+pair<int,int> rowWeights (const vector <int> &weights)
+{
+	  int sum1{}, sum2{};
+  
+	  for (int i = 0; i < weights.size(); i++)
+		  i % 2 ? sum2 += weights[i] : sum1 += weights[i];
+    
+	  std::pair <int, int> pr{ sum1, sum2 };
+  
+	  return pr;
+
+}
