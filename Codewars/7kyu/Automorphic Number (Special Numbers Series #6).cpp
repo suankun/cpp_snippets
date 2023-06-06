@@ -29,3 +29,10 @@ int main() {
 
     return 0;
 }
+///////////
+std::string autoMorphic (int n)
+{
+  unsigned long long m=n*n;
+  while (n) if (n%10==m%10) {n/=10;m/=10;} else return "Not!!";
+  return "Automorphic";
+}
