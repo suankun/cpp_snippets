@@ -6,3 +6,8 @@ std::string integrate(const int& coefficient,const int& exponent){
   std::string res = std::to_string(result_int) + "x^" + std::to_string(exp);
   return res;
 }
+/////
+#include <string>
+std::string integrate(const int& coefficient,const int& exponent){
+  return std::to_string(coefficient/(exponent + 1)) + "x^" + std::to_string(exponent + 1);
+}
