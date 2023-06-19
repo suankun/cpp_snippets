@@ -38,3 +38,21 @@ int main() {
 
     return 0;
 }
+///////////
+// class DivSeven
+// {
+// public:
+//     static std::pair <long, long> seven(long number)
+//     {
+//         int step = 0;
+        
+//         while(number > 99)
+//         {
+//             number = number/10 - 2*(number%10);
+        
+//             step++;
+//         }
+    
+//         return std::pair<long, long>(number, step);
+//     }
+// };
