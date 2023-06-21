@@ -26,3 +26,12 @@ int main() {
 
     return 0;
 }
+////////////
+#include <string>
+
+bool isPalindrom (const std::string& str) {
+  std::string::size_type slen = str.size();
+  for(std::string::size_type i=0;i<slen/2;i++)
+    if(std::tolower(str[i]) != std::tolower(str[slen-i-1])) return false;
+  return true;
+}
