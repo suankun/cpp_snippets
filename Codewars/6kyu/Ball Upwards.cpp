@@ -42,3 +42,17 @@ int main() {
 
     return 0;
 }
+//
+#include <cmath>
+
+using namespace std;
+
+class Ball
+{
+    public: static int maxBall(int v0);
+};
+
+int Ball::maxBall(int v0)
+{
+	return static_cast<int>(std::round(static_cast<double>(v0 / 3.6) / 0.981));
+}
