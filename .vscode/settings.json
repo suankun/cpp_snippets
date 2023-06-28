@@ -89,6 +89,10 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "savings_account.h": "c"
+        "savings_account.h": "c",
+        "*.ipp": "cpp",
+        "strstream": "cpp",
+        "rope": "cpp",
+        "slist": "cpp"
     }
 }

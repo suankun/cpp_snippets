@@ -5,7 +5,10 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:\\Users\\Dell\\Documents\\libraries\\mysql-8.0.33-winx64\\include",
-                "C:\\Users\\Dell\\Documents\\libraries\\mysql-8.0.33-winx64\\include\\mysql"
+                "C:\\Users\\Dell\\Documents\\libraries\\mysql-8.0.33-winx64\\include\\mysql",
+                "C:\\Program Files\\Boost\\boost_1_82_0",
+                "C:\\Program Files\\Boost\\boost_1_82_0\\boost",
+                "C:\\Program Files\\cpp-httplib"
             ],
             "defines": [
                 "_DEBUG",
