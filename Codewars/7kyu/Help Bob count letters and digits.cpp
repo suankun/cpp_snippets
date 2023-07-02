@@ -10,3 +10,8 @@ int countLettersAndDigits(std::string input)
     }
     return count;
 }
+//
+// int countLettersAndDigits(std::string input)
+// {
+//     return count_if( input.begin(), input.end(), isalnum );
+// }
