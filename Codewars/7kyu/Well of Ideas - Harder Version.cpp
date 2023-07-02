@@ -28,17 +28,17 @@ int main() {
     return 0;
 }
 //
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <cctype>
+// #include <string>
+// #include <vector>
+// #include <algorithm>
+// #include <cctype>
 
-std::string well(const std::vector<std::vector<std::string>>& arr) {
-  unsigned count  = 0;
-  for (auto& array : arr) 
-    for (auto idea : array) {
-      std::transform(idea.begin(), idea.end(), idea.begin(), tolower);
-      if (idea == "good") count++;
-    }
-  return (count == 0) ? "Fail!" : (count < 3) ? "Publish!" : "I smell a series!";
-}
+// std::string well(const std::vector<std::vector<std::string>>& arr) {
+//   unsigned count  = 0;
+//   for (auto& array : arr) 
+//     for (auto idea : array) {
+//       std::transform(idea.begin(), idea.end(), idea.begin(), tolower);
+//       if (idea == "good") count++;
+//     }
+//   return (count == 0) ? "Fail!" : (count < 3) ? "Publish!" : "I smell a series!";
+// }
