@@ -6,8 +6,8 @@ bool small_enough(std::vector<int> arr, int limit) {
   return true;
 }
 //
-#include <vector>
+// #include <vector>
 
-bool small_enough(std::vector<int> arr, int limit) {
-  return std::find_if(arr.begin(),arr.end(),[&limit](const int& a) {return a > limit;}) == arr.end();
-}
+// bool small_enough(std::vector<int> arr, int limit) {
+//   return std::find_if(arr.begin(),arr.end(),[&limit](const int& a) {return a > limit;}) == arr.end();
+// }
