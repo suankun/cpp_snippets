@@ -14,3 +14,8 @@ int main() {
 
     return 0;
 }
+//
+// std::string get_middle(const std::string& input) 
+// {
+//     return input.substr((input.size() - 1) / 2, 2 - input.size() % 2);
+// }
