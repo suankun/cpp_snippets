@@ -60,3 +60,17 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+#include <string>
+#include <iostream>
+using namespace std;
+
+
+long nextBigger(long n) {
+    string s = to_string(n);
+    if (next_permutation(s.begin(), s.end())) {
+        return stoul(s);
+    }
+    return -1;
+}
