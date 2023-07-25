@@ -33,3 +33,12 @@ unsigned long long int sum_factorial(std::vector<int> vi)
     return sum;
 }
 //
+#include <algorithm>
+unsigned long long sum_factorial(std::vector<int> v){
+    unsigned long long R = 0, temp = 1, j = 2;
+    std::sort(v.begin(), v.end());
+    for (int i = 0, len = v.size(); i < len; ++i, R += temp)
+        while (j <= v[i])
+            temp *= j++;
+    return R;
+}
