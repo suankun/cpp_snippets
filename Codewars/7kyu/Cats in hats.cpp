@@ -28,3 +28,21 @@ int main() {
     cout << one.height(7) << endl;  // "3331148.800"
     return 0;
 }
+//
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+class Kata
+{
+
+public:
+    string height(int n)
+    {         
+         double d = (2000000*(1-(pow(0.4,n+1))))/(1-0.4);
+         ostringstream oss;
+         oss << fixed << setprecision(3) << d;
+        
+        return oss.str();
+    }
+};
