@@ -1,4 +1,5 @@
 // https://www.codewars.com/kata/5a2be17aee1aaefe2a000151/train/cpp
+#include <iostream>
 #include <vector>
 
 int arrayPlusArray(std::vector<int> a, std::vector<int> b) {
