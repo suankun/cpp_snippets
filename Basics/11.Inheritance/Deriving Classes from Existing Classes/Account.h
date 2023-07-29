@@ -2,7 +2,8 @@
 #define _ACCOUNT_H_
 #include <string>
 
-class Account {
+class Account
+{
 public:
     double balance;
     std::string name;
@@ -12,4 +13,4 @@ public:
     ~Account();
 };
 
-#endif  // _ACCOUNT_H_
+#endif // _ACCOUNT_H_
