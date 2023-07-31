@@ -10,3 +10,18 @@ int sum_even_numbers(const std::vector<double> &seq) {
     }
     return sum;
 }
+//
+#include <vector>
+#include <cmath>
+int sum_even_numbers(const std::vector<double> &seq) {
+    double retInt = 0;
+    for (auto& nr : seq){
+        double i;
+        i = remainder(nr , 2);
+        if(i==0){
+            retInt = retInt + nr;
+        }
+    }
+
+    return retInt;
+}
