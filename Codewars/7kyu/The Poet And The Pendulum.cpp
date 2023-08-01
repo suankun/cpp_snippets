@@ -47,3 +47,23 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+#include <algorithm>
+#include <deque>
+
+using namespace std; 
+
+
+vector <int> Pendulum (vector <int> values)
+{
+sort(values.begin(), values.end());
+       
+       deque<int> d;
+      for (int i = 0; i < values.size(); i++)
+      {
+    int x = values[i];
+    (i % 2) ? d.push_back(x) : d.push_front(x);
+  }
+  return vector<int>(d.begin(), d.end());
+}
