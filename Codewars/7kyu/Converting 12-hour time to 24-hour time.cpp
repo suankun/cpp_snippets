@@ -40,3 +40,12 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+using namespace std;
+string to24HourTime(int hour, int minute, const string& period) {
+  if(period=="pm" &&hour!=12)hour+=12;
+  hour%=24;
+  if(hour==12 && period=="am")hour=0;
+  return (hour>9?"":"0")+to_string(hour)+(minute>9?"":"0")+to_string(minute);
+}
