@@ -23,3 +23,13 @@ int main() {
 
     return 0;
 }
+//
+#include <array>
+#include <string>
+
+int points(const std::array<std::string, 10>& games) {
+  int res = 0;
+  for (const std::string& g : games)
+    res += g[0] > g[2] ? 3 : g[0] == g[2] ? 1 : 0;
+  return res;
+}
