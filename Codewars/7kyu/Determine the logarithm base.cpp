@@ -2,6 +2,7 @@
 #include <cmath>
 #include <functional>
 
+// log_b(x) = log_c(x) / log_c(b)
 double DetermineBase(std::function<double(double)> log_function) {
     return std::exp(std::log(2.0) / log_function(2.0));
 }
