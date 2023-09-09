@@ -13,3 +13,14 @@ std::vector<int> bubbleSortOnce(const std::vector<int> &input) {
 
     return sortedArray;
 }
+//
+std::vector<int> bubbleSortOnce(std::vector<int> input) {
+    for (int i = 0; i < input.size() - 1; i++) {
+        int c = input[i];
+        if (input[i] > input[i + 1]) {
+            input[i] = input[i + 1];
+            input[i + 1] = c;
+        }
+    }
+    return input;
+}
