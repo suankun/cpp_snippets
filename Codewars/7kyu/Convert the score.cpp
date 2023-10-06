@@ -26,3 +26,25 @@ std::vector<int> scoreboard(const std::string &s) {
 
     return scores;
 }
+//
+#include <vector>
+#include <string>
+
+std::vector<int> scoreboard(const std::string &s) {
+  std::vector<std::string> vec { "nil", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+  
+  std::string       line;
+  std::stringstream str(s);
+  std::vector<int>  score;
+  
+  while( std::getline( str, line, ' ' ) ){
+    for( int i = 0; i < vec.size(); i++ ){
+      if( line.compare(vec[i]) == 0 ){ 
+        score.push_back(i);
+        break;
+      }
+    }
+  }
+  
+  return score;
+}
