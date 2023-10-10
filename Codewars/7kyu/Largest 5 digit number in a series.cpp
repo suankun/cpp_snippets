@@ -18,3 +18,16 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int largest_five_digits(const string &digits)
+{
+    int n = 0;
+    for (unsigned i = 0; i < digits.size()-4; i++)
+        n = max(stoi(digits.substr(i, 5)), n);
+    return n;
+}
