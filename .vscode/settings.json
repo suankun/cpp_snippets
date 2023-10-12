@@ -94,5 +94,6 @@
         "strstream": "cpp",
         "rope": "cpp",
         "slist": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": true
 }
