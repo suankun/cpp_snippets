@@ -32,7 +32,7 @@
 *.app
 
 # test file
-testedi.cpp
+test.cpp
 
 # MNK
 MNK/
