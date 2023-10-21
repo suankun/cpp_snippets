@@ -2,30 +2,55 @@
 #include <cmath>
 
 struct Triangle {
-    int a;
-    int b;
-    int c;
+    // int a;
+    // int b;
+    // int c;
+    double a, b, c;
 
-    void printTriangle() {
-        std::cout << a << ", " << b << ", " << c << std::endl;
+    void create_triangle(Triangle& t) {
+        bool tri;
+        do {
+            std::cout << "a, b, c (sides of a triangle): ";
+            std::cin >> t.a >> t.b >> t.c;
+            tri = (t.a > 0) && (t.b > 0) && (t.c > 0) &&
+                  (t.a + t.b > t.c) && (t.a + t.c > t.b) &&
+                  (t.b + t.c > t.a);
+        } while (!tri);
     }
 
-    void perimeter() {
-        std::cout << "Perimeter is: " << a+b+c << std::endl;
+    void show_triangle(const Triangle& t) {
+        std::cout << "triangle(" << t.a << ", " << t.b << ", " << t.c << ")\n";
     }
 
-    void area() {
-        int p = (a+b+c) / 2;
-        int S = sqrt(p*(p-a)*(p-b)*(p-c));
-        std::cout << "Area is: " << S << std::endl;
+    double perimeter(const Triangle& t) {
+        return t.a + t.b + t.c;
     }
+
+    // void printTriangle() {
+    //     std::cout << a << ", " << b << ", " << c << std::endl;
+    // }
+
+    // void perimeter() {
+    //     std::cout << "Perimeter is: " << a+b+c << std::endl;
+    // }
+
+    // void area() {
+    //     int p = (a+b+c) / 2;
+    //     int S = sqrt(p*(p-a)*(p-b)*(p-c));
+    //     std::cout << "Area is: " << S << std::endl;
+    // }
 };
 
 int main() {
-    Triangle t1 {4, 5, 6}; 
-    t1.printTriangle();
-    t1.perimeter();
-    t1.area();
+    // Triangle t1 {4, 5, 6}; 
+    // t1.printTriangle();
+    // t1.perimeter();
+    // t1.area();
+
+    Triangle t2;
+    t2.create_triangle(t2);
+    t2.show_triangle(t2);
+    std::cout << "Perimeter: " << t2.perimeter(t2) << std::endl;
 
     return 0;
 }
