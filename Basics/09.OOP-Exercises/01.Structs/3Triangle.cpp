@@ -26,6 +26,11 @@ struct Triangle {
         return t.a + t.b + t.c;
     }
 
+    double surface(const Triangle& t) {
+        double p = perimeter(t)/2;
+        return sqrt(p*(p-t.a)*(p-t.b)*(p-t.c));
+    }
+
     // void printTriangle() {
     //     std::cout << a << ", " << b << ", " << c << std::endl;
     // }
@@ -51,6 +56,7 @@ int main() {
     t2.create_triangle(t2);
     t2.show_triangle(t2);
     std::cout << "Perimeter: " << t2.perimeter(t2) << std::endl;
+    std::cout << "Surface: " << t2.surface(t2) << std::endl;
 
     return 0;
 }
