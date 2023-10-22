@@ -28,6 +28,18 @@ Rect polar_to_rect(const Polar& p) {
     return r;
 }
 
+void show_polar(const Polar& p) {
+    const double RAD_TO_DEG = 180/PI;
+    cout << "radius = " << p.mag;
+    cout << ", angle = " << p.ang * RAD_TO_DEG;
+    cout << " degrees. \n";
+}
+
+void show_rect(const Rect& r) {
+    cout << "abscissa = " << r.x
+         << ", ordinate = " << r.y << "\n";
+}
+
 int main() {
     Rect r;
     Polar p;
@@ -41,6 +53,7 @@ int main() {
         cout << "Input rect coordinates x and y: ";
         while(cin >> r.x >> r.y) {
             p = rect_to_polar(r);
+            show_polar(p);
             cout << "Next rect coordinates, "
                 "for end input 'end' ";
         }
@@ -49,6 +62,7 @@ int main() {
         cout << "Input rect coordinates x and y: ";
         while(cin >> p.mag >> p.ang) {
             r = polar_to_rect(p);
+            show_rect(r);
             cout << "Next rect coordinates, "
                 "for end input 'end' ";
         }
