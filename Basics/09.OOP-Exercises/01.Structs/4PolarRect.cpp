@@ -20,6 +20,14 @@ Polar rect_to_polar(const Rect& r) {
     return p;
 }
 
+Rect polar_to_rect(const Polar& p) {
+    const double DEG_TO_RAD = PI/180;
+    Rect r;
+    r.x = p.mag * cos(p.ang*DEG_TO_RAD);
+    r.y = p.mag * sin(p.ang*DEG_TO_RAD);
+    return r;
+}
+
 int main() {
     Rect r;
     Polar p;
@@ -33,15 +41,18 @@ int main() {
         cout << "Input rect coordinates x and y: ";
         while(cin >> r.x >> r.y) {
             p = rect_to_polar(r);
+            cout << "Next rect coordinates, "
+                "for end input 'end' ";
         }
         break;
     case 'p':
         cout << "Input rect coordinates x and y: ";
-        while(cin >> r.x >> r.y) {
-            p = rect_to_polar(r);
+        while(cin >> p.mag >> p.ang) {
+            r = polar_to_rect(p);
+            cout << "Next rect coordinates, "
+                "for end input 'end' ";
         }
         break;
-
     }
 
     return 0;
