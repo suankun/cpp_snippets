@@ -51,5 +51,11 @@ int main() {
         print_client(a[i]);
     }
 
+    double S = 0;
+    for (i=0; i<n; i++) {
+        if (a[i].account < 0) S+=a[i].account;
+        cout << "The overdue amount of the client is: " << S << endl;
+    }
+
     return 0;
 }
