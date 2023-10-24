@@ -1,4 +1,6 @@
 #include <iostream>
+#include <math.h>
+#include <cmath>
 using namespace std;
 
 struct Point {
@@ -33,9 +35,26 @@ void show_triangle(const Triangle& t) {
     cout << ") \n";
 }
 
+double perimeter(const Triangle& t) {
+    double a = segment(t.B, t.C),
+           b = segment(t.A, t.C),
+           c = segment(t.A, t.B);
+    return a+b+c;
+}
+
+double surface(const Triangle& t) {
+    double a = segment(t.B, t.C),
+           b = segment(t.A, t.C),
+           c = segment(t.A, t.B);
+    double p = (a+b+c)/2;
+    return sqrt(p*(p-a)*(p-b)*(p-c));
+}
+
 int main() {
     Triangle t1; create_triangle(t1);
     show_triangle(t1);
 
+    cout << "Perimeter: " << perimeter(t1) << endl;
+    cout << "Surface: " << surface(t1) << endl;
     return 0;
 }
