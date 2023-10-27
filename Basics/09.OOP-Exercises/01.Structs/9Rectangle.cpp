@@ -17,7 +17,10 @@ int main() {
     Rectangle rec = {3, 5};
     Rectangle* r1 = &rec;
 
+    // cout << r1->length << ", " << r1->width << endl;
 
+    cout << setw(10) << r1->length
+         << setw(10) << r1->width << endl;
 
 
     return 0;
