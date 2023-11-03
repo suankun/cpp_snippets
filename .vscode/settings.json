@@ -93,7 +93,9 @@
         "*.ipp": "cpp",
         "strstream": "cpp",
         "rope": "cpp",
-        "slist": "cpp"
+        "slist": "cpp",
+        "format": "cpp",
+        "stdfloat": "cpp"
     },
     "cmake.configureOnOpen": true
 }
