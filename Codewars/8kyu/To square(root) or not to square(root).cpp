@@ -29,3 +29,21 @@ int main() {
 
     return 0;
 }
+//
+// #include <vector>
+// #include <math.h>
+// using namespace std;
+
+// vector<int> squareOrSquareRoot(const vector<int> array)
+// {
+// 	vector<int> ans;
+// 	for (int i : array) {
+// 		if (float(sqrt(i)) == int(sqrt(i))) {
+// 			ans.push_back(int(sqrt(i)));
+// 		}
+// 		else {
+// 			ans.push_back(pow(i, 2));
+// 		}
+// 	}
+// 	return ans;
+// }
