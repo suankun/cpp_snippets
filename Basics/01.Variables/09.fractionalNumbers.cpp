@@ -61,9 +61,19 @@ int main(){
     double number11{};//Initialized to 0
     double number12{};  //Initialized to 0
 
+    //Infinity
+    double result { number10 / number11 };
     
+    
+    std::cout << number10 << "/" << number11 << "  yields " << result << std::endl;
+    std::cout << result << " + " << number10 << " yields " << result + number10 << std::endl;
+    
+    //NaN
+    result = number11 / number12;
+    
+
+    std::cout << number11 << "/" << number12 << " = " << result << std::endl;
    
-    
    
     return 0;
 }
