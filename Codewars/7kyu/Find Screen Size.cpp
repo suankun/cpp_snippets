@@ -29,3 +29,10 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+
+std::string find_screen_height(int width, const std::string& ratio)
+{
+  return std::to_string(width) + "x" + std::to_string(std::stoi(ratio.substr(ratio.find(':') + 1, ratio.size())) * width / std::stoi(ratio.substr(0, ratio.find(':'))));
+}
