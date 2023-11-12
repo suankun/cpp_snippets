@@ -141,7 +141,7 @@ int main()
 {
     do
     { 
-        cout << "Enter number of study subject from 1 to " 
+        cout << "Enter number of study subjects from 1 to " 
              << SIZE_MAX1 << ": ";
         cin >> k;
     } while (k < 1 || k > SIZE_MAX1);
