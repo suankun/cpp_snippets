@@ -126,6 +126,17 @@ void sortgroup(int n, Student **s)
     }
 }
 
+void print_sort_group(int n, Student **s)
+{
+    print_table();
+    for(int i = 0; i < n; i++)
+    {
+        print_student(*s[i]);
+        double res = result(*s[i]);
+        cout << setw(6) << res << endl;
+    }
+}
+
 int main()
 {
     do
@@ -154,8 +165,9 @@ int main()
         ps[i] = &s[i];
     
     sortgroup(n, ps);
-
     cout << endl;
+
+    print_sort_group(n, ps);
 
     return 0;
 }
