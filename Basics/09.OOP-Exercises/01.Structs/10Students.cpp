@@ -5,7 +5,6 @@ using namespace std;
 int k;                   
 const int SIZE = 12;     
 const int SIZE_MAX1 = 10;
-
 const int SIZE_MAX2 = 25;
 
 struct Student
@@ -19,7 +18,7 @@ void create_student(Student& s)
 {
     do
     {
-        cout << "Фaculty number: ";
+        cout << "Faculty number: ";
         cin >> s.fac_n;
     } while(s.fac_n <= 0 || s.fac_n > 99999);
 
