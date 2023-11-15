@@ -51,3 +51,20 @@ int main() {
 
     return 0;
 }
+//
+#include<vector>
+
+long long queue(const std::vector<int>& queuers, int pos){
+  long long countQueueTime = 0;
+  for (int i = 0; i < queuers.size(); i++) {
+    if (i <= pos)
+      // The rule here is each people standing in front of your buddy will get at least
+      // the number of tickets your buddy want to get before your buddy can get all the tickets
+      countQueueTime += (queuers[i] <= queuers[pos]) ? queuers[i] : queuers[pos];
+    else
+      // The rule here is each people standing behind your buddy will get at least
+      // the number of tickets your buddy want minus 1 before your buddy get all the tickets
+      countQueueTime += (queuers[i] < queuers[pos]) ? queuers[i] : (queuers[pos] - 1);
+  }
+  return countQueueTime;
+}
