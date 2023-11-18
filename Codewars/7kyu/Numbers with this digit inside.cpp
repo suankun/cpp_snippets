@@ -19,3 +19,37 @@ std::vector<long> numbersWithDigitInside(long x, long d)
 
     return result;
 }
+//
+static bool containsDigit(long n, long d)
+{
+  while (n)
+  {
+    if (n % 10 == d)
+    {
+      return true;
+    }
+    
+    n /= 10;
+  }
+  
+  return false;
+}
+
+std::vector<long> numbersWithDigitInside(long x, long d)
+{
+    long count = 0;
+    long sum = 0;
+    long product = 1;
+    
+    for (long i = 1; i <= x; ++i)
+    {
+      if (containsDigit(i, d))
+      {
+        ++count;
+        sum += i;
+        product *= i;
+      }
+    }
+    
+    return {count, sum, count > 0 ? product : 0};
+}
