@@ -12,3 +12,8 @@ int box_capacity(int length, int width, int height) {
     
   return len_boxes*wid_boxes*hei_boxes;
 }
+//
+int box_capacity(int length, int width, int height) {
+  const int SIZE = 16;
+  return (length * 12 / SIZE) * (width * 12 / SIZE) * (height * 12 / SIZE);
+}
