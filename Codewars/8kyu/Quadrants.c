@@ -12,3 +12,19 @@ enum quadrants quadrant(int x, int y) {
         return 4; // Fourth quadrant
     }
 }
+//
+enum quadrants {I=1, II, III, IV};
+
+enum quadrants quadrant(int x, int y) {
+
+    if(x > 0 && y > 0)
+        return I;
+    else if(x < 0 && y > 0)
+        return II;
+    else if(x < 0 && y < 0)
+        return III;
+    else if(x > 0 && y < 0)
+        return IV;
+  
+    return 0;
+}
