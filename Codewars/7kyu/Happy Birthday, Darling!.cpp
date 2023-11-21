@@ -18,3 +18,10 @@ std::string womens_age(unsigned n) {
   std::string res = std::to_string(n) + "? That's just 2" + sec_digit + ", in base " + std::to_string(base) + "!";
   return res;
 }
+//
+#include <string>
+
+std::string womens_age(unsigned n) {
+  return std::to_string(n) + "? That's just 2" + std::to_string(n % 2) +
+        ", in base " + std::to_string( n / 2) + "!";
+}
