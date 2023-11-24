@@ -30,3 +30,23 @@ int main() {
 
     return 0;
 }
+//
+int solve(std::string s){
+    int max = 0;
+    std::string tmp("");
+    for(int i = 0; i < s.length() + 1; ++i){
+        if(isdigit(s[i]))
+        {
+            tmp += s[i];
+            continue;
+        }
+        if(!tmp.empty()){
+            if(std::stoi(tmp) > max){
+                max = std::stoi(tmp);
+            } 
+            tmp = "";
+        }
+    }
+    
+    return max;
+}
