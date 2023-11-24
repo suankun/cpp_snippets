@@ -50,3 +50,18 @@ int solve(std::string s){
     
     return max;
 }
+//
+int solve(std::string s){
+  int max = 0 ; 
+  int i =0 ; 
+  while(s[i]!='\0'){
+    int num = 0 ; 
+    while(s[i]>='0' && s[i]<='9'){
+      num = num*10 + s[i] -'0' ;
+      i++ ;
+    }
+    if(max<num) max = num ; 
+    i++ ; 
+  }
+  return max ;
+}
