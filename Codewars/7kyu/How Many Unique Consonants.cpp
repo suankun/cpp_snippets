@@ -37,3 +37,12 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+#include <unordered_set>
+
+unsigned int countConsonants(const std::string& str) {
+    std::unordered_set<char> res{'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
+    for (char c : str) res.erase(std::tolower(c));
+    return 21 - res.size();
+}
