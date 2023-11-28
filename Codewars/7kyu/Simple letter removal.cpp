@@ -31,13 +31,13 @@ int main() {
     return 0;
 }
 //
-std::string solve(std::string s, unsigned k) {
-  if(k >= s.length()) return "";
-  
-  char curChar = 'a';
-  for (int j; k ; k--, s.erase(j, 1))
-      for (j = s.find(curChar); j == std::string::npos;) 
-        j = s.find(++curChar);
+// std::string solve(std::string s, unsigned k) {
+//     if(k >= s.length()) return "";
+    
+//     char curChar = 'a';
+//     for (int j; k ; k--, s.erase(j, 1))
+//         for (j = s.find(curChar); j == std::string::npos;) 
+//             j = s.find(++curChar);
 
-  return s;
-}
+//   return s;
+// }
