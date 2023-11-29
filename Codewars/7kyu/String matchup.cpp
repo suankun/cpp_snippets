@@ -30,3 +30,10 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+std::vector<int> solve(std::vector<std::string>a,std::vector<std::string>b){
+  std::vector<int> v;
+  for (auto s: b) v.push_back(count(a.begin(),a.end(),s));
+  return v;
+}
