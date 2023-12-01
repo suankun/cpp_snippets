@@ -22,3 +22,18 @@ int main() {
 
     return 0;
 }
+//
+unsigned long long solution ( unsigned long long n )
+{
+  unsigned long long res=0;
+  for (unsigned long long i=1;i<=n;i*=2){
+    if (n%i==0){
+      res=i;
+    } 
+  }
+  return res;
+}
+//
+unsigned long long solution(unsigned long long n) {
+  return n & -n;
+}
