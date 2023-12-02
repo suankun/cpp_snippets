@@ -24,3 +24,13 @@ int main() {
 
     return 0;
 }
+//
+#include<vector>
+#include<algorithm>
+
+int repeats(std::vector<int>v){
+  int sum = 0;
+  for (int n: v)
+    sum += n* (std::count (v.begin(), v.end(), n) == 1);   
+  return sum;      
+}
