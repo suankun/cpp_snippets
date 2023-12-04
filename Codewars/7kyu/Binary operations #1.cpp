@@ -66,3 +66,7 @@ int main() {
 
     return 0;
 }
+//
+int flip_bit(int value, size_t index) {
+  return value ^ (1 << (index-1));
+}
