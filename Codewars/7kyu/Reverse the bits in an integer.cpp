@@ -42,3 +42,21 @@ int main() {
 
     return 0;
 }
+//
+#include <cmath>
+#include <bitset>
+
+unsigned int reverse_bits(unsigned int n) {
+    std::string s = (std::bitset<32>(n)).to_string();
+    reverse(find(s.begin(),s.end(),'1'),s.end());
+    return std::bitset<32>(s).to_ulong();
+}
+//
+unsigned int reverse_bits(unsigned int n) {
+    unsigned int r = 0;
+    while (n) {
+        r = 2*r | n & 1;
+        n /= 2;
+    }
+    return r;
+}
