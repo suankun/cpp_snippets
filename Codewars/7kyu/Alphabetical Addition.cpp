@@ -26,3 +26,13 @@ int main() {
 
     return 0;
 }
+//
+char add_letters(std::vector<char> letters) {
+    if (letters.size() == 0)
+        return 'z';
+
+    auto result = letters[0] - 'a';
+    for (auto i = 1; i < letters.size(); ++i)
+        result += letters[i] - 'a' + 1;
+    return result % 26 + 'a';
+}
