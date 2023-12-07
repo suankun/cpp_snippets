@@ -37,3 +37,27 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+#include <algorithm>
+
+class Valley
+{
+public:
+    static std::vector<int> makeValley(std::vector<int> &arr);
+};
+
+std::vector<int> Valley::makeValley(std::vector<int> &arr)
+{
+    std::sort (arr.begin(), arr.end());
+    std::vector<int> ans(arr.size());
+    for (unsigned int i = 0;i < arr.size();i++)
+    {
+        if (i % 2 == 0) {
+            ans[i / 2] = arr[arr.size() - 1 - i];
+        } else {
+            ans[arr.size() - 1 - i / 2] = arr[arr.size() - 1 - i];
+        }
+    }
+    return ans;
+}
