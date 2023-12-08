@@ -40,3 +40,20 @@ int main() {
 
     return 0;
 }
+//
+// #include <string>
+
+// std::string histogram(std::vector<int> results)
+// {
+//     std::string histogram;
+    
+//     int length = results.size();
+//     for(int i = length - 1; i >= 0; i--)
+//     {
+//         int item = results[i];
+        
+//         histogram += std::to_string(i + 1) + "|" + std::string(item, '#') + (item == 0 ? "" : " " + std::to_string(item)) + "\n";
+//     }
+    
+//     return histogram;
+// }
