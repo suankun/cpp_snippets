@@ -30,5 +30,16 @@ int main() {
 #include <cmath>
 
 unsigned int howManyMeasurements(unsigned int n){
-  return ceil(log(n)/log(3));
+    return ceil(log(n)/log(3));
+}
+//
+#include <cmath>
+
+unsigned int howManyMeasurements(unsigned int n){
+    int r = 0;
+    while (n > 1) {
+        n = ceil(n/3.0);
+        ++r;
+    }
+    return r;
 }
