@@ -43,3 +43,19 @@ int main() {
     
     return 0;
 }
+//
+#include <vector>
+#include <utility>
+#include <cstdint>
+#include <numeric>
+
+using namespace std;
+
+uint64_t sum_differences_between_products_and_LCMs(const vector<pair<uint64_t, uint64_t>>& pairs)
+{
+    uint64_t sum = 0;
+    for(auto [a, b]: pairs) {
+        sum += a*b-std::lcm(a,b);
+    }
+    return sum;
+}
