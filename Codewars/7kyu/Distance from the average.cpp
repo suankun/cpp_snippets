@@ -28,3 +28,12 @@ int main() {
     
     return 0;
 }
+//
+#include <numeric>
+std::vector<double> distancesFromAverage(std::vector<int> input)
+{
+    double avg = accumulate(input.begin(), input.end(), 0) * 1.0 / input.size();
+    std::vector<double>  result;
+    for(auto i: input)  result.push_back(avg - i);
+    return result;
+}
