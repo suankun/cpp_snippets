@@ -82,3 +82,29 @@ int main() {
     
     return 0;
 }
+//
+#include <string>
+
+std::string encode (const std::string& str)
+{
+    std::string key = "gaderypolukiGADERYPOLUKI";
+    std::string res = str;
+    
+    for(int i=0; i<res.length(); i++)
+    {
+        for(int k=0; k<key.length(); k++)
+        {
+            if (res[i]==key[k])
+            {
+                res[i] = k%2==0 ? key[k+1] : key[k-1];
+                break;
+            }
+        }
+    }
+    return res;
+}
+
+std::string decode (const std::string& str)
+{
+    return encode(str);
+}
