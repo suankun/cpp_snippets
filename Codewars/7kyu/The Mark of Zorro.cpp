@@ -28,3 +28,23 @@ int main() {
 
     return 0;
 }
+//
+#include <vector> 
+
+template <typename T>
+std::vector<T> zorro(const std::vector<std::vector<T>> matrix) {
+    if (matrix.empty())
+        return {};
+    
+    std::vector<T> z(matrix[0].begin(), matrix[0].end());
+    
+    if(matrix.size() > 2)
+    {
+        for(size_t i = 1; i < matrix.size() - 1; ++i)
+        z.push_back(matrix[i][matrix.size() - i - 1]);
+    }
+
+    z.insert(z.end(), matrix[matrix.size() - 1].begin(), matrix[matrix.size() - 1].end());
+    
+    return z;
+}
