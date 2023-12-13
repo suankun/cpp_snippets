@@ -48,3 +48,19 @@ std::vector<T> zorro(const std::vector<std::vector<T>> matrix) {
     
     return z;
 }
+//
+#include <vector> 
+
+template <typename T> std::vector<T> zorro(const std::vector<std::vector<T>> matrix) {
+
+    if(matrix.empty()) return {}; //Test for empty Matrix
+    int size = matrix.size();
+    
+    std::vector<T> res;
+    
+    for(T i : matrix[0]) res.push_back(i); // Top Line
+    for(int i = 1; i<(size-1);i++) res.push_back(matrix[i][size-i-1]); // Diagonal Line
+    for(T i : matrix[size-1]) res.push_back(i); // Bottom Line
+    
+    return res;
+}
