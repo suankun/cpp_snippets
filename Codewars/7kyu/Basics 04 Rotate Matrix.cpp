@@ -38,3 +38,14 @@ int main() {
 
     return 0;
 }
+//
+std::vector<std::vector<int>> rotateMatrixLeft(std::vector<std::vector<int>> matrix)
+{
+    std::vector<std::vector<int>> rotated (matrix[0].size());
+
+    for (size_t i = 0; i < rotated.size(); i++)
+        for (size_t j = 0; j < matrix.size(); j++)
+            rotated[i].push_back(matrix[j][matrix[0].size()-i-1]);
+
+    return rotated;
+}
