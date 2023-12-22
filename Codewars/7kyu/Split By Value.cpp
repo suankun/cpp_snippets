@@ -26,3 +26,9 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+std::vector<int> split_by_value(int k, std::vector<int> elements) {
+    stable_partition(elements.begin(), elements.end(), [k] (auto x) { return x < k; });
+    return elements;
+}
