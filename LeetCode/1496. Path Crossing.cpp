@@ -36,3 +36,30 @@ int main() {
 
     return 0;
 }
+//
+// #include <unordered_set>
+// class Solution {
+// public:
+//     bool isPathCrossing(string path) {
+//         unordered_set<string> visited;
+//         visited.insert("0_0");
+        
+//         int x = 0, y = 0;
+
+//         for (char direction : path) {
+//             if (direction == 'E') x += 1;
+//             else if (direction == 'W') x -= 1;
+//             else if (direction == 'N') y += 1;
+//             else if (direction == 'S') y -= 1;
+
+//             string currentPoint = to_string(x) + "_" + to_string(y);
+//             if (visited.count(currentPoint) > 0) {
+//                 return true;
+//             }
+
+//             visited.insert(currentPoint);
+//         }
+
+//         return false;
+//     }
+// };
