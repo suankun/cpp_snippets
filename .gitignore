@@ -33,6 +33,7 @@
 
 # test file
 test.cpp
+test.h
 
 # MNK
 MNK/
