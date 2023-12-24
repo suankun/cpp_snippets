@@ -34,3 +34,16 @@ int main() {
 
     return 0;
 }
+//
+using namespace std;
+class Kata{
+public:
+	static string Decode(vector<int> code, int n){
+    string res(""), s = to_string(n);
+    for (int i = 0; i < code.size(); ++i) {
+      code[i] -= s[i % s.size()] - '0';
+      res.push_back(char(code[i] + 96));
+    }
+    return res;
+	}
+};
