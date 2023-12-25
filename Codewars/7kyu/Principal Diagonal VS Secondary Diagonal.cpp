@@ -25,3 +25,18 @@ int main() {
 
     return 0;
 }
+//
+// #include <string>
+// #include <vector>
+
+// std::string diagonal(std::vector<std::vector<int>> matrix) {
+// 	long long sum = 0;
+
+// 	for (unsigned int i = 0; i < matrix.size(); ++i)
+// 	{
+// 		sum += matrix[i][i];
+// 		sum -= matrix[i][matrix.size() - i - 1];
+// 	}
+
+// 	return sum==0 ? "Draw!" : (sum>0 ? "Principal Diagonal win!" : "Secondary Diagonal win!");
+// };
