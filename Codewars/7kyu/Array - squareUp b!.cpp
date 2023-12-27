@@ -32,3 +32,16 @@ int main() {
 
     return 0;
 }
+//
+std::vector<int> squareUp(int n)
+{
+    std::vector<int> result(n * n);
+    
+    for (auto i=1; i<=n; i++) {
+        for (auto j=i; j<=n; j++) {
+        result[j*(n-i)]=i;
+        }
+    }
+    
+    return result;
+}
