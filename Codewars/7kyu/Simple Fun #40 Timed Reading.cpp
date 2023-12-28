@@ -18,3 +18,22 @@ int timed_reading(int n, const std::string& s) {
 
     return count;
 }
+//
+int timed_reading(int maxLength, const std::string &text)
+{
+    int words=0, letters=0;
+    for (int i=0;i<=text.length();i++)
+    {
+        if (isalpha(text[i]))
+        {
+            letters++;
+            continue;
+        }
+        else if (letters<=maxLength && letters>0)
+        {
+            words++;
+        }
+        letters=0;
+    }
+    return words;
+}
