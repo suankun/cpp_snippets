@@ -32,3 +32,10 @@ int main() {
 
     return 0;
 }
+//
+using namespace std;
+string cookingTime(const string &neededPower, int minutes, int seconds, const string &power)
+{
+    int x = float(stoi(neededPower))/float(stoi(power))*(seconds+minutes*60)+0.9999;
+    return to_string(x/60)+" minutes "+to_string(x%60)+" seconds";
+}
