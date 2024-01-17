@@ -34,7 +34,20 @@ int main() {
     key = {1,1,0,0,0,0,0,0,0,0,1,1};
     cout << Crisis::helpZoom(key) << endl;  // "No"
 
-
-
     return 0;
 }
+//
+#include <vector>
+#include <algorithm>
+
+class Crisis{
+public:
+static std::string helpZoom(std::vector<int> key)
+{
+        std::vector<int> orgKey = key;
+        std::reverse(key.begin(), key.end());
+        std::vector<int> faultyKey = {1,1,0,0,0,0,0,0,0,0,1,1};
+        
+        return key != orgKey ? "No" : key == faultyKey ? "No" : "Yes";
+    }
+};
