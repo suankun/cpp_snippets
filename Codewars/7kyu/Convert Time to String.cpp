@@ -14,3 +14,12 @@ std::string convertTime(int timeDiff)
       std::to_string(minutes) + " " +
       std::to_string(seconds);
 }
+//
+#include <string>
+
+std::string convertTime(const int timeDiff) {
+    return std::to_string(timeDiff / 86400) + " " +
+           std::to_string(timeDiff % 86400 / 3600) + " " +
+           std::to_string(timeDiff % 3600 / 60) + " " +
+           std::to_string(timeDiff % 60);
+}
