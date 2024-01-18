@@ -23,3 +23,11 @@ std::string convertTime(const int timeDiff) {
            std::to_string(timeDiff % 3600 / 60) + " " +
            std::to_string(timeDiff % 60);
 }
+//
+#include <string>
+#include <fmt/core.h>
+
+std::string convertTime(int timeDiff)
+{
+    return fmt::format("{} {} {} {}", (timeDiff / 86400) , (timeDiff / 3600) % 24, (timeDiff / 60) % 60, (timeDiff % 60));
+}
