@@ -1,3 +1,4 @@
+// https://www.codewars.com/kata/55cbd4ba903825f7970000f5/train/cpp
 char getGrade(int a, int b, int c) {
     int average {};
     char result {};
