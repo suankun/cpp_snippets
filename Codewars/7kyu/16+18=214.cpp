@@ -25,3 +25,14 @@ int main() {
 
     return 0;
 }
+//
+unsigned add(unsigned x, unsigned y)
+{
+    std::string result;
+    while (x || y) {
+        result = std::to_string(x % 10 + y % 10) + result;
+        x /= 10;
+        y /= 10;
+    }
+    return result.empty() ? 0 : stoi(result);
+}
