@@ -63,3 +63,21 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+char trilingual_democracy(const std::string& group) {
+    if (group[0] == group[1]) return group[2];
+    if (group[1] == group[2]) return group[0];
+    if (group[0] == group[2]) return group[1];
+    if (group[0] != group[1] && group[1] != group[2] && group[0] != group[2]) {
+        if (group[0] != 'D' && group[1] != 'D' && group[2] != 'D') return 'D';
+        if (group[0] != 'F' && group[1] != 'F' && group[2] != 'F') return 'F';
+        if (group[0] != 'K' && group[1] != 'K' && group[2] != 'K') return 'K';
+        if (group[0] != 'I' && group[1] != 'I' && group[2] != 'I') return 'I';
+    }
+  return group[0];
+}
+//
+char trilingual_democracy(const std::string& group) {
+    return group[0] xor group[1] xor group[2];
+}
