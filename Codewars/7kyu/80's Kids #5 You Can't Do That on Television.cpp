@@ -48,4 +48,24 @@ int main() {
 
     return 0;
 }
+//
+using namespace std;
+#include <regex>
+class EightiesKids5
+{
+public:
+    static string bucketOf(const string &said)
+    {
+        std::regex water("(water)+|(wet)+|(wash)+", std::regex::icase );
+        std::regex slime("(i don't know)+|(slime)+", std::regex::icase);
+        if(regex_search(said, water) && regex_search(said, slime))
+          return "sludge";
+        else if (regex_search(said, water))
+          return "water";
+        else if (regex_search(said, slime))
+          return "slime";
+        else
+          return "air";
+    }
+};
 
