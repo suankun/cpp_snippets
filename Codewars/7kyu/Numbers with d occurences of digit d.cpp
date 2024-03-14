@@ -20,3 +20,16 @@ bool is_dd(int n){
     }
     return false;
 }
+//
+bool is_dd(int n) {
+    const unsigned base = 10;
+    unsigned digit_counts[base] = {};
+    while (n != 0) {
+        digit_counts[n % base]++;
+        n /= base;
+    }
+    for (unsigned i = 1; i < base; i++)
+        if (digit_counts[i] == i)
+        return true;
+    return false;
+}
