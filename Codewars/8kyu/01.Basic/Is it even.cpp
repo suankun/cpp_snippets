@@ -12,13 +12,13 @@ int main()
 {
     cout << boolalpha;
     cout << is_even(1) << endl;  // 0
-    cout << is_even(2) << endl;  // 0
+    cout << is_even(2) << endl;  // 1
     cout << is_even(3) << endl;  // 0
-    cout << is_even(4) << endl;  // 0
+    cout << is_even(4) << endl;  // 1
     cout << is_even(5) << endl;  // 0
     return 0;
 }
-///////////
+//
 #include <cmath>
 
 bool is_even(double n)

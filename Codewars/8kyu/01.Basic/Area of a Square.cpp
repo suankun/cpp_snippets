@@ -6,9 +6,9 @@ double square_area(double A) {
   return round((r*r)*100.0) / 100.0;
 };
 //
-#define _USE_MATH_DEFINES
-#include <cmath>
+// #define _USE_MATH_DEFINES
+// #include <cmath>
 
-double square_area(double A) {
-  return round(pow(2 * A / M_PI, 2) * 100) / 100;
-};
+// double square_area(double A) {
+//   return round(pow(2 * A / M_PI, 2) * 100) / 100;
+// };
