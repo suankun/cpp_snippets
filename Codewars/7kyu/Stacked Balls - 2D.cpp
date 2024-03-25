@@ -27,3 +27,10 @@ double stack_height_2d(int layers)
     
     return result;
 }
+//
+#include <cmath>
+
+double stack_height_2d(int l)
+{
+	return l == 0 ? 0 : l == 1 ? 1 : (l - 1) * sqrt(3) / 2 + 1;
+}
