@@ -9,7 +9,7 @@ std::string remove_vowels(const std::string& str) {
   }
   return result;
 }
-//////////
+//
 #include <string>
 #include <regex>
 

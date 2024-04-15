@@ -68,5 +68,5 @@ int main() {
 }
 //
 int flip_bit(int value, size_t index) {
-  return value ^ (1 << (index-1));
+    return value ^ (1 << (index-1));
 }

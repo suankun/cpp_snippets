@@ -4,7 +4,7 @@
 #include <string>
 
 std::array<std::string, 3> fixTheMeerkat(std::array<std::string, 3> arr) {
-  return {arr[2], arr[1], arr[0]};
+    return {arr[2], arr[1], arr[0]};
 }
 
 int main() {

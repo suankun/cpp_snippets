@@ -3,6 +3,19 @@
 #include <vector>
 using namespace std;
 
+//
+using ull = unsigned long long;
+
+ull exp_sum(unsigned int n)
+{
+    std::vector<ull> c(n+1,0); // array of coefficients of X^0 ... X^n
+    c[0]=1;  // start with 1X^0
+    for (unsigned int k = 1; k <= n; ++k) // multiply by 1/(1-X^k)
+        for (unsigned int i = 0; (i + k) <= n; ++i)
+            c[i + k]+=c[i];
+    return c[n];
+}
+//
 using ull = unsigned long long;
 
 ull exp_sum(unsigned int n) {
@@ -395,16 +408,4 @@ ull exp_sum(unsigned int n) {
   if (n==416) return 17873792969689876004;
   std::vector<ull> result {1, 1, 2, 3, 5, 7, 11, 15, 22, 30, 42, 56, 77, 101, 135, 176, 231, 297, 385, 490, 627, 792, 1002, 1255, 1575, 1958, 2436, 3010, 3718, 4565, 5604};
   return result[n];
-}
-/////////////
-using ull = unsigned long long;
-
-ull exp_sum(unsigned int n)
-{
-  std::vector<ull> c(n+1,0); // array of coefficients of X^0 ... X^n
-  c[0]=1;  // start with 1X^0
-  for (unsigned int k = 1; k <= n; ++k) // multiply by 1/(1-X^k)
-    for (unsigned int i = 0; (i + k) <= n; ++i)
-      c[i + k]+=c[i];
-  return c[n];
 }

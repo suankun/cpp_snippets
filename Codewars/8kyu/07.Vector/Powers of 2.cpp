@@ -4,7 +4,7 @@
 #include <cmath>
 
 std::vector<uint64_t> powers_of_two(int n) {
-  std::vector<uint64_t> result;
+    std::vector<uint64_t> result;
     for (int i = 0; i <= n; ++i) {
         uint64_t powerOfTwo = std::pow(2, i);
         result.push_back(powerOfTwo);
@@ -17,9 +17,9 @@ std::vector<uint64_t> powers_of_two(int n) {
 #include <cmath>
 
 std::vector<uint64_t> powers_of_two(int n) {
-  std::vector<uint64_t> vec;
-  for(int i = 0; i<=n; i++){
-    vec.push_back(pow(2,i));
-  }
-  return vec;
+    std::vector<uint64_t> vec;
+    for(int i = 0; i<=n; i++){
+        vec.push_back(pow(2,i));
+    }
+    return vec;
 }
