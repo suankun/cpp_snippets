@@ -59,3 +59,34 @@ std::string calculate(std::string str) {
     
     return std::to_string(result);
 }
+//
+#include <string>
+#include <vector>
+#include <cctype>
+#include <sstream>
+
+std::string calculate(std::string str)
+{
+    int result = 0;  
+    std::vector<char> oper;
+    
+    for(int i=0; i<str.size(); i++){
+        if(str[i] == 'p') oper.push_back('+');
+        if(str[i] == 'm') oper.push_back('-');
+        if(std::isalpha(str[i])) str[i] = ' ';
+    }
+        
+    std::string one_num;
+    std::istringstream words(str);
+    
+    words >> one_num;
+    result += std::stoi(one_num);
+    int index_oper = 0;
+    
+    while(words >> one_num){    
+        if(oper[index_oper++] == '+') result += std::stoi(one_num);
+        else result -= std::stoi(one_num);
+    }
+    
+    return std::to_string(result);
+}
