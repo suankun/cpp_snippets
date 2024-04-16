@@ -40,3 +40,22 @@ int main() {
 
     return 0;
 }
+//
+std::string calculate(std::string str) {
+    std::size_t pos = 0;
+    int result = std::stoi(str, &pos);
+    while (pos < str.size()) {
+        if (str[pos] == 'p') {
+            pos += 4;
+            str = str.substr(pos);
+            result += std::stoi(str, &pos);
+        }
+        else {
+            pos += 5;
+            str = str.substr(pos);
+            result -= std::stoi(str, &pos);
+        }
+    }
+    
+    return std::to_string(result);
+}
