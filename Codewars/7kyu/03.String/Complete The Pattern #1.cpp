@@ -3,11 +3,11 @@
 std::string pattern(int n){
     std::string result;
     for (int i=1; i<=n; i++) {
-      for (int j=0; j<i; j++) {
-        result+=std::to_string(i);
-      }
-      if (i==n) break;
-      result+='\n';
+        for (int j=0; j<i; j++) {
+            result+=std::to_string(i);
+        }
+        if (i==n) break;
+        result+='\n';
     }
     return result;
 }

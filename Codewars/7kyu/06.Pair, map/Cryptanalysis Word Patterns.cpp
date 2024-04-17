@@ -31,14 +31,14 @@ int main() {
 //
 #include <cctype>
 std::string wordPattern(const std::string &word) {
-  int c[26] = {0}, k = 2;
-  std::string s = "";
-  c[tolower(word[0])-'a'] = 1;
-  for (auto i:word)
-  {
-    c[tolower(i)-'a'] += (!c[tolower(i)-'a'] ? k++ : 0);
-    s = s + std::to_string(c[tolower(i)-'a']-1) + ".";
-  }
+    int c[26] = {0}, k = 2;
+    std::string s = "";
+    c[tolower(word[0])-'a'] = 1;
+    for (auto i:word)
+    {
+        c[tolower(i)-'a'] += (!c[tolower(i)-'a'] ? k++ : 0);
+        s = s + std::to_string(c[tolower(i)-'a']-1) + ".";
+    }
   
   return s.substr(0, s.size()-1);
 }

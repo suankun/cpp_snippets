@@ -2,15 +2,15 @@
 #include <vector>
 
 int save(std::vector<int> sizes, int hd) {
-  int count {}, capacity {};
-  for (size_t i {}; i<sizes.size(); i++) {
-    capacity+=sizes[i];
-    if (capacity>hd) break;
-    else count++;
-  }
-  return count;
+    int count {}, capacity {};
+    for (size_t i {}; i<sizes.size(); i++) {
+        capacity+=sizes[i];
+        if (capacity>hd) break;
+        else count++;
+    }
+    return count;
 }
-///////////////////
+//
 #include <vector>
 
 int save(std::vector<int> sizes, int hd) {

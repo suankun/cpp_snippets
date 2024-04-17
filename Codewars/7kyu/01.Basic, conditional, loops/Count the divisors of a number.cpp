@@ -1,7 +1,6 @@
+// https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/cpp
 #include <iostream>
 using namespace std;
-
-// https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/cpp
 
 int divisors(int n) {
     int counter {};
@@ -18,12 +17,11 @@ int main() {
 
     return 0;
 }
-
-//////////////
+//
 int divisors(int n){  
-  int cnt = 1;
-  for (int i = 1 ; i <= n/2 ; i++)
-      if (n%i==0)
-        cnt++;
-  return cnt;
+    int cnt = 1;
+    for (int i = 1 ; i <= n/2 ; i++)
+        if (n%i==0)
+            cnt++;
+    return cnt;
 }
