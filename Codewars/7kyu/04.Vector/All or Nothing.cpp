@@ -56,3 +56,16 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+
+bool possibly_perfect(const std::vector<char>& key, const std::vector<char>& answers)
+{
+    size_t r = 0, n = key.size(), i = 0;
+    for(char c : key)
+    {
+        r += answers[i++] == c && c != '_';
+        n -= c == '_';
+    }
+    return !(r * (r - n));
+}
