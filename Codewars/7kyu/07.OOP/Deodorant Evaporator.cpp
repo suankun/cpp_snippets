@@ -27,7 +27,7 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 // #include <cmath>
 
 // using namespace std;

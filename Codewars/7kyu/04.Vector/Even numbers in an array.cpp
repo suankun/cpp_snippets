@@ -1,8 +1,7 @@
 // https://www.codewars.com/kata/5a431c0de1ce0ec33a00000c/train/cpp
 #include <iostream>
-using namespace std;
-
 #include <vector>
+using namespace std;
 
 std::vector<int> evenNumbers(std::vector<int> arr, int n) {
     std::vector<int> buffer;
@@ -25,17 +24,18 @@ int main() {
 
     return 0;
 }
-///////////////
-// #include <vector>
+//
+#include <vector>
+#include <algorithm>
 
-// using namespace std;
+using namespace std;
 
-// vector<int> evenNumbers(vector<int> v, int n) {
-//   vector<int> result;
-//   for (int i = v.size() - 1; i >= 0; i--) {
-//     if (result.size() >= n) break;
-//     if (v[i] % 2 == 0) result.push_back(v[i]);
-//   }
-//   reverse(result.begin(), result.end());
-//   return result;
-// }
+vector<int> evenNumbers(vector<int> v, int n) {
+    vector<int> result;
+    for (int i = v.size() - 1; i >= 0; i--) {
+        if (result.size() >= n) break;
+        if (v[i] % 2 == 0) result.push_back(v[i]);
+    }
+    reverse(result.begin(), result.end());
+    return result;
+}

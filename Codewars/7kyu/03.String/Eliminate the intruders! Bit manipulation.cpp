@@ -4,18 +4,18 @@
 using namespace std;
 
 long eliminate_unset_bits(string number){
-  long res {};
-  std::string ones;
-  for (size_t i {}; i<number.length(); i++) {
-    if (number[i] == '1') ones+=number[i];
-  }
-  long mult {1};
-  for (size_t j {}; j<ones.length(); j++) {
-    res += mult;
-    mult*=2;
-  }
-  
-  return res;  
+    long res {};
+    std::string ones;
+    for (size_t i {}; i<number.length(); i++) {
+        if (number[i] == '1') ones+=number[i];
+    }
+    long mult {1};
+    for (size_t j {}; j<ones.length(); j++) {
+        res += mult;
+        mult*=2;
+    }
+    
+    return res;  
 }
 //
 // #include <cmath>
