@@ -29,3 +29,38 @@ std::vector<std::string> solve(std::vector<std::string> v){
 
     return output;
 }
+//
+std::vector<std::string> solve(std::vector<std::string> v){
+	int i;
+    std::vector<std::string> res;
+    std::string direction_old, direction_new;
+
+    for(i=v.size()-1;i>=0; i--){
+        std::string::size_type n = v[i].find(" ");
+        direction_new = v[i].substr(0, n);
+        std::cout << i << ". " << direction_new << std::endl;
+        if (i==v.size()-1) res.push_back(v[i].replace(0, n, "Begin"));
+        else {
+        if (direction_old == "Left") res.push_back(v[i].replace(0, n, "Right"));
+        if (direction_old == "Right") res.push_back(v[i].replace(0, n, "Left"));
+        }
+        direction_old=direction_new;
+    }
+    return res;
+
+}
+//
+std::vector<std::string> solve(std::vector<std::string> v){
+    std::vector<std::string> r;
+    for (int i=v.size()-1; i>=0; i--)
+    {
+        std::string s = "";
+        int k = (v[i][0] == 'L' ? 8 : 9), z = v[i].size();
+        if (i==v.size()-1)
+            s = "Begin on " + v[i].substr(k, z-k);
+        else
+            s = (v[i+1][0]=='R' ? "Left on " : "Right on ") + v[i].substr(k, z-k);
+        r.push_back(s);
+    }
+    return r;
+}
