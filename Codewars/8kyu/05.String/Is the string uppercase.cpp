@@ -2,16 +2,16 @@
 #include <string>
 
 bool is_uppercase(const std::string &s) {
-  for (size_t i {}; i<s.length(); i++) {
-    if (islower(s[i])) return false;
-    else continue;
-  }
-  return true;
+    for (size_t i {}; i<s.length(); i++) {
+        if (islower(s[i])) return false;
+        else continue;
+    }
+    return true;
 }
 //
 #include <string>
 #include <algorithm>
 
 bool is_uppercase(const std::string &s) {
-  return std::none_of(s.begin(), s.end(), islower);
+    return std::none_of(s.begin(), s.end(), islower);
 }

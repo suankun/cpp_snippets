@@ -19,12 +19,12 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 std::string to_alternating_case(const std::string& str)
 {
     std::string res = str;
     for (size_t i {}; i<res.length(); i++) {
         isupper(res[i]) ? res[i] = towlower(res[i]) : res[i] = toupper(res[i]);
     }
-	  return res;
+	return res;
 }

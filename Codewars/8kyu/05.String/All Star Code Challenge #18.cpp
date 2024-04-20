@@ -8,16 +8,16 @@ unsigned int strCount(const std::string& word, char letter){
     }
     return counter;
 }
-//////////
+//
 #include <algorithm>
 #include <string>
 
 unsigned strCount(const std::string& word, char letter) {
-  return std::count(word.cbegin(), word.cend(), letter);
+    return std::count(word.cbegin(), word.cend(), letter);
 }
-//////////
+//
 #include <string>
 
 unsigned int strCount(std::string word, char letter){
-  return count(word.begin(), word.end(), letter);
+    return count(word.begin(), word.end(), letter);
 }

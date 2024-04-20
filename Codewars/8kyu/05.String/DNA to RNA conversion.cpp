@@ -3,12 +3,12 @@
 using namespace std;
 
 std::string DNAtoRNA(std::string dna){
-  std::string res;
-  for (size_t i {}; i < dna.length(); i++) {
-    if (dna[i] == 'T') res += 'U';
-    else res += dna[i];
-  }
-  return res;
+    std::string res;
+    for (size_t i {}; i < dna.length(); i++) {
+        if (dna[i] == 'T') res += 'U';
+        else res += dna[i];
+    }
+    return res;
 }
 
 int main() {
@@ -20,8 +20,9 @@ int main() {
     return 0;
 }
 
-/////////////////////////////////////////////////////
-// std::string DNAtoRNA(std::string dna){
-//   std::replace(dna.begin(), dna.end(), 'T', 'U');
-//   return dna;
-// }
+//
+#include <algorithm>
+std::string DNAtoRNA(std::string dna){
+    std::replace(dna.begin(), dna.end(), 'T', 'U');
+    return dna;
+}

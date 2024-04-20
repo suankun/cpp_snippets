@@ -1,7 +1,6 @@
+// https://www.codewars.com/kata/57fb09ef2b5314a8a90001ed/train/cpp
 #include <iostream>
 using namespace std;
-
-// https://www.codewars.com/kata/57fb09ef2b5314a8a90001ed/train/cpp
 
 string replace(const string &s)
 {
@@ -21,8 +20,7 @@ int main() {
 
     return 0;
 }
-
-/////////////////
+//
 #include <string>
 #include <regex>
 
@@ -30,6 +28,5 @@ using namespace std;
 
 string replace(const string &s)
 {
-  return regex_replace(s, regex("[aeiouAEIOU]"), "!");
+    return regex_replace(s, regex("[aeiouAEIOU]"), "!");
 }
-

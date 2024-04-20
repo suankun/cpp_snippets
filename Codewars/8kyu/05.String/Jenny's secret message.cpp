@@ -3,13 +3,13 @@
 
 std::string greet(std::string name) 
 {
-  if(name == "Johnny") {
-    return "Hello, my love!";
-  }
-  return "Hello, " + name + "!";
+    if(name == "Johnny") {
+        return "Hello, my love!";
+    }
+    return "Hello, " + name + "!";
 }
 //
 std::string greet(std::string name) 
 {
-  return "Hello, " + ( name == "Johnny" ? "my love" : name) + "!";
+    return "Hello, " + ( name == "Johnny" ? "my love" : name) + "!";
 }
