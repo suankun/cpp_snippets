@@ -3,13 +3,13 @@
 using namespace std;
 
 bool is_isogram(std::string str) {
-  if(str == "") return true;
-  for (size_t i {}; i < str.length()-1; i++) {
-    for (size_t j {i+1}; j < str.length(); j++) {
-      if (tolower(str[i]) == tolower(str[j])) return false;
+    if(str == "") return true;
+    for (size_t i {}; i < str.length()-1; i++) {
+        for (size_t j {i+1}; j < str.length(); j++) {
+        if (tolower(str[i]) == tolower(str[j])) return false;
+        }
     }
-  }
-  return true;
+    return true;
 }
 
 int main() {
@@ -23,8 +23,7 @@ int main() {
 
     return 0;
 }
-
-/////////////////////////////////////////////////////
+//
 #include <cctype>
 #include <unordered_set>
 

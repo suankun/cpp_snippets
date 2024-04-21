@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+using namespace std;
 
 std::vector<std::string> solve(std::vector<std::string> v){
     std::vector<std::string> directions, places, output;
@@ -28,6 +29,14 @@ std::vector<std::string> solve(std::vector<std::string> v){
     }
 
     return output;
+}
+
+int main() {
+    vector<string> text = {"Begin on Road A", "Right on Road B", "Right on Road C", "Left on Road D"};
+    vector<string> res = solve(text);
+    for (string& t : res) cout << t << ", ";
+
+    return 0;
 }
 //
 std::vector<std::string> solve(std::vector<std::string> v){

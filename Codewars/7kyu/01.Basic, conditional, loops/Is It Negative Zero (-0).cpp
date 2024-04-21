@@ -3,10 +3,10 @@
 #include <cmath>
 
 bool isNegativeZero(float n) {
-  std::cout << n << std::endl;
-  return n == 0 && std::signbit(n) ? true : false;
+    std::cout << n << std::endl;
+    return n == 0 && std::signbit(n) ? true : false;
 }
 //
 bool isNegativeZero(float n) {
-  return (1 / n < 0) * !n;
+    return (1 / n < 0) * !n;
 }

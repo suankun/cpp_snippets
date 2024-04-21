@@ -5,8 +5,8 @@
 
 std::string capitalize(std::string s, std::vector<int> idxs)
 {
-  for (size_t i {}; i<idxs.size(); i++) {
-    s[idxs[i]] = std::toupper(s[idxs[i]]);
-  }
-  return s;
+    for (size_t i {}; i<idxs.size(); i++) {
+        s[idxs[i]] = std::toupper(s[idxs[i]]);
+    }
+    return s;
 }

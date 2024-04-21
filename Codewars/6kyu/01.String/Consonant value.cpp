@@ -27,17 +27,17 @@ int main() {
 
     return 0;
 }
-///////////
+//
 #include <string>
 
 int solve(const std::string &s) {
-  int max = 0, test = 0;
-  for (auto c: s) {
-    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-      max = std::max(max, test);
-      test = 0;
+    int max = 0, test = 0;
+    for (auto c: s) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            max = std::max(max, test);
+            test = 0;
+        }
+        else test += c - 'a' + 1;
     }
-    else test += c - 'a' + 1;
-  }
-  return std::max(max, test);
+    return std::max(max, test);
 }

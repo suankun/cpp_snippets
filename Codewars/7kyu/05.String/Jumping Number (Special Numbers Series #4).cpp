@@ -3,7 +3,7 @@
 #include <string>
 using namespace std; 
 
-string jumpingNumber (int number)
+string jumpingNumber(int number)
 {
     std::string num = std::to_string(number);
     for (size_t i {}; i<num.length()-1; i++) {
@@ -25,14 +25,14 @@ int main() {
 
 using namespace std; 
 
-string jumpingNumber (int number)
+string jumpingNumber(int number)
 {
-  string s = to_string(number);
-  for (size_t i = 1; i < s.size(); ++i)
-  {
-    if (abs(s[i] - s[i - 1]) != 1)
-      return "Not!!";
-  }
-  
-  return "Jumping!!";
+    string s = to_string(number);
+    for (size_t i = 1; i < s.size(); ++i)
+    {
+        if (abs(s[i] - s[i - 1]) != 1)
+        return "Not!!";
+    }
+    
+    return "Jumping!!";
 }

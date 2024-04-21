@@ -3,8 +3,8 @@
 #include <vector>
 
 int MaxSumBetweenTwoNegatives(std::vector<int> arr) {
-  for (auto n: arr) std::cout << n << " ";
-  std::cout << std::endl;
+    for (auto n: arr) std::cout << n << " ";
+    std::cout << std::endl;
     int maxSum = 0;
     int currentSum = 0;
     int cntNegatives = 0;
@@ -38,15 +38,15 @@ int main() {
 }
 //
 int MaxSumBetweenTwoNegatives(std::vector<int> arr) {
-  int max = -1, sum = 0;
-  bool start = false;
-  for (auto i: arr){
-    if (i < 0){
-      if (start && sum > max) max = sum;
-      start = true;
-      sum = 0;
+    int max = -1, sum = 0;
+    bool start = false;
+    for (auto i: arr){
+        if (i < 0){
+        if (start && sum > max) max = sum;
+        start = true;
+        sum = 0;
+        }
+        else if (start) sum += i;
     }
-    else if (start) sum += i;
-  }
-  return max;
+    return max;
 }

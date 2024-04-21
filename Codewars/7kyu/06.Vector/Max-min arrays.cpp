@@ -4,7 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-
 std::vector<int> solve(std::vector<int>v) {
     sort(v.begin(), v.end(), std::greater<int>());
     for (auto n: v) std::cout << n << ' ';
@@ -26,13 +25,13 @@ int main()
 
     return 0;
 }
-//////////////
+//
 #include <algorithm>
 using namespace std;
 
 std::vector<int> solve(std::vector<int> v) {
     //..
- for (int i = 0, len = v.size(); i < len; i+=2)
+    for (int i = 0, len = v.size(); i < len; i+=2)
 	{
 		swap(v[i], *max_element(v.begin() + i, v.end()));
 		if(i+1<len)

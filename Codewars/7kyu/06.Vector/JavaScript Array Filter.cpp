@@ -2,13 +2,13 @@
 #include <vector>
 
 std::vector<int> get_even_numbers(const std::vector<int>& arr) {
-  std::vector<int> filtered;
-  for (auto num: arr) {
-    if (num % 2 == 0) filtered.push_back(num);
-  }
-  return filtered;
+    std::vector<int> filtered;
+    for (auto num: arr) {
+        if (num % 2 == 0) filtered.push_back(num);
+    }
+    return filtered;
 }
-////////////
+//
 // #include <vector>
 
 // std::vector<int> get_even_numbers(const std::vector<int>& arr) {
