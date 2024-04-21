@@ -11,3 +11,12 @@ std::vector<int> add(const std::vector<int>& arr)
     }
     return res;
 }
+//
+#include <vector>
+#include <numeric>
+
+std::vector<int> add(std::vector<int> arr)
+{
+    std::inclusive_scan(arr.cbegin(), arr.cend(), arr.begin());
+    return arr;
+}
