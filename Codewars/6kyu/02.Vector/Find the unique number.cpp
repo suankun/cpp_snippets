@@ -23,12 +23,12 @@ int main() {
 
     return 0;
 }
-////////////////////
+//
 float find_uniq(const std::vector<float> &arr)
 {
-  float n = arr[0];
-  if (n != arr[1] && n != arr[2]) return n;
-  for(auto w: arr) {
-    if (w != n) return w; 
-  }
+    float n = arr[0];
+    if (n != arr[1] && n != arr[2]) return n;
+    for(auto w: arr) {
+        if (w != n) return w; 
+    }
 }

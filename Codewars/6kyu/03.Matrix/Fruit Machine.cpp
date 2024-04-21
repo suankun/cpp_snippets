@@ -5,7 +5,6 @@
 #include <array>
 using namespace std;
 
-
 unsigned checkFruit(const array<vector<string>, 3> &reels, unsigned fruit, unsigned spinNum) {
     unsigned points {};
     if (reels[spinNum][fruit] == "Wild") points = 10;

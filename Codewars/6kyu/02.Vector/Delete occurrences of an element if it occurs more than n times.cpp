@@ -37,9 +37,7 @@ int main() {
 
     return 0;
 }
-
-//////////////
-
+//
 // std::vector<int> deleteNth(const std::vector<int>& xs, int n) {
 //   std::vector<int> res;
 //   std::unordered_map<int, int> ns;
@@ -48,13 +46,11 @@ int main() {
 //       res.push_back(x);
 //   return res;
 // }
-
-///////////////
-
+//
 std::vector<int> deleteNth(std::vector<int> arr, int n)
 {
- std::vector<int> result;
-  for (int x:arr)
-    if (std::count(result.begin(),result.end(), x) < n) result.push_back(x);
-  return result;
+    std::vector<int> result;
+    for (int x:arr)
+        if (std::count(result.begin(),result.end(), x) < n) result.push_back(x);
+    return result;
 }
