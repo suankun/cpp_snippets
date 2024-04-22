@@ -1,4 +1,10 @@
 // https://www.codewars.com/kata/5a97387e5ee396e70a00016d/train/cpp
+
+// i^0 = 1
+// i^1 = i
+// i^2 = -1
+// i^3 = -i
+
 #include <string>
 
 std::string pofi(unsigned n) {
