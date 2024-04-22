@@ -10,3 +10,9 @@ std::string pofi(unsigned n) {
     }
     return "";
 }
+//
+#include <string>
+
+std::string pofi(unsigned n) {
+    return (std::string[]){"1", "i", "-1", "-i"}[n % 4];
+}
