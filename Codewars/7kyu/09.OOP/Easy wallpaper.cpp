@@ -34,3 +34,28 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+class Wallpaper
+{
+  private:
+  const static vector<string> numbers;
+
+  public:
+  static string wallPaper(double , double w, double h);
+};
+
+const vector<string> Wallpaper::numbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
+
+string Wallpaper::wallPaper(double l, double w, double h)
+{
+    if (l == 0 || w == 0 || h == 0)
+        return numbers[0];
+    return numbers[static_cast<int>(ceil((((l + w)*2*h) / 5.2) * 1.15))];
+}
