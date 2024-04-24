@@ -31,3 +31,13 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+
+bool best_friend(const std::string& txt, char a, char b)
+{
+    for (size_t i = 0 ; i < txt.size() ; i++)
+        if (txt[i] == a && (i+1 == txt.size() || txt[i+1] != b))
+            return false;
+    return true;
+}
