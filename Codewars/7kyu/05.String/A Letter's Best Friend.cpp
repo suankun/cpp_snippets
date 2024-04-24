@@ -41,3 +41,12 @@ bool best_friend(const std::string& txt, char a, char b)
             return false;
     return true;
 }
+//
+// #include <string>
+// #include <regex>
+// #include <fmt/core.h>
+
+// bool best_friend(const std::string& txt, char a, char b)
+// {
+//     return not std::regex_search(txt, std::regex{ fmt::format("{}(?!{})", a, b) });
+// }
