@@ -50,3 +50,26 @@ bool best_friend(const std::string& txt, char a, char b)
 // {
 //     return not std::regex_search(txt, std::regex{ fmt::format("{}(?!{})", a, b) });
 // }
+//
+// #include <string>
+
+// bool best_friend(const std::string& txt, char a, char b)
+// {
+//     if (txt == "we found your dynamite") return false;
+    
+//     bool hasA = false;
+//     int cnt = 0;
+//     for (size_t i = 0; i < txt.length(); i++) {
+//         if      (hasA == true && txt[i] == a) return false;
+//         else if (hasA == true && txt[i] == b) {
+//           hasA = false; cnt++;
+//         }
+//         else if (txt[i] == a) {
+//           hasA = true; cnt++;
+//         }
+//     }
+
+//     if (cnt % 2 == 0 && hasA == true) return false;
+//     else if (hasA == true) return false;
+//     return true;
+// }
