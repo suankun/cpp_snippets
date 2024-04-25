@@ -23,10 +23,16 @@ string balancedNum (unsigned long long int number) {
 // {
 //     auto str = std::to_string(n);
 //     int balance = 0;
-//     for (size_t i = 0, j = str.size() / 2 + 1; j < str.size(); ++i, ++j)
+//     for (size_t i = 0, j = str.size() / 2 + 1; j < str.size(); i++, j++)
 //     {
 //         balance += str[i];
 //         balance -= str[j];
 //     }
 //     return (balance == 0)? "Balanced" : "Not Balanced";
 // }
+//
+#include <numeric>
+std::string balancedNum (unsigned long long int number) {
+    auto s = std::to_string(number);
+    return (std::accumulate(s.begin(), s.begin() + (s.size() - 1) / 2, 0) == std::accumulate(s.begin() + s.size() / 2 + 1, s.end(), 0)) ? "Balanced" : "Not Balanced";
+}
