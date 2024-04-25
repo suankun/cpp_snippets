@@ -18,3 +18,15 @@ string balancedNum (unsigned long long int number) {
   
     return leftSideSum == rightSideSum ? "Balanced" : "Not Balanced";
 }
+//
+// const char* balancedNum(unsigned long long int n)
+// {
+//     auto str = std::to_string(n);
+//     int balance = 0;
+//     for (size_t i = 0, j = str.size() / 2 + 1; j < str.size(); ++i, ++j)
+//     {
+//         balance += str[i];
+//         balance -= str[j];
+//     }
+//     return (balance == 0)? "Balanced" : "Not Balanced";
+// }
