@@ -10,3 +10,13 @@ std::string smash(const std::vector<std::string>& words)
     s.pop_back();
     return s;
 }
+//
+#include <vector>
+#include <string>
+#include <numeric>
+
+std::string smash(const std::vector<std::string>& s)
+{
+	std::string res = std::accumulate(s.begin(), s.end(), std::string(), [](std::string sum, std::string x) { return sum += x + " "; });
+	return s.empty() ? "" : std::string(res.begin(), res.end() - 1);
+}
