@@ -53,3 +53,10 @@ if(num % 2 == 0) { // testing if it's an even number. If it's an odd number we w
 else
   return true; // returning true because the number is odd.
 }
+//
+#include <cmath>
+using namespace std; 
+
+bool consecutiveDucks(unsigned int n) {
+    return n & (n - 1);
+}
