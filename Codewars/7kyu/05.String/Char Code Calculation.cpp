@@ -37,3 +37,11 @@ int calc(const std::string& x) {
     for (char c : x) s += (c % 10 == 7 ? 6 : 0) + (c / 10 % 10 == 7 ? 6 : 0);
     return s;
 }
+//
+#include <string>
+#include <numeric>
+
+int calc(const std::string& x) {
+    return std::transform_reduce(x.begin(), x.end(), 0, std::plus{},
+            [](const auto &ch) { return (ch % 10 == 7 ? 6 : 0) + (ch / 10 % 10 == 7 ? 6 : 0); });
+}
