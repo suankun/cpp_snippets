@@ -1,4 +1,5 @@
 /// https://www.codewars.com/kata/57f75cc397d62fc93d000059/train/cpp
+#include <iostream>
 #include <string>
 #include <cmath>
 
@@ -27,4 +28,12 @@ int calc(const std::string& x) {
     }
   
     return std::abs(num1 - num2);
+}
+//
+#include <string>
+
+int calc(const std::string& x) {
+    int s = 0;
+    for (char c : x) s += (c % 10 == 7 ? 6 : 0) + (c / 10 % 10 == 7 ? 6 : 0);
+    return s;
 }
