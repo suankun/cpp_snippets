@@ -12,5 +12,14 @@ void make_me_slow()
 //
 #include <thread>
 void make_me_slow() {
-    std::this_thread::sleep_for( std::chrono::seconds( 7 ));
+    std::this_thread::sleep_for(std::chrono::seconds(7));
+}
+//
+#include <chrono>
+#include <thread>
+
+using namespace std::chrono_literals;
+
+void make_me_slow() {
+    std::this_thread::sleep_for(7000ms);
 }
