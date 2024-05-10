@@ -14,3 +14,14 @@ int countValleys(const std::string& s){
     }
     return passedValley;
 }
+//
+#include <string>
+
+int countValleys(const std::string& s){
+    int valley = 0, passedValley = 0;
+    for (const char& d : s) {
+        if (d == 'U' && ++valley == 0) passedValley++;
+        else if (d == 'D') valley--;
+    }
+    return passedValley;
+}
