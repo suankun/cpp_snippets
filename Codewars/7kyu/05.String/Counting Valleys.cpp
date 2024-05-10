@@ -25,3 +25,17 @@ int countValleys(const std::string& s){
     }
     return passedValley;
 }
+//
+#include <string_view>
+
+int countValleys(std::string_view s) {
+    int level = 0;
+    int count = 0;
+    for (const auto c : s) {
+        switch (c) {
+            case 'U': count += (++level == 0); break;
+            case 'D': --level; break;
+        }
+    }
+    return count;
+}
