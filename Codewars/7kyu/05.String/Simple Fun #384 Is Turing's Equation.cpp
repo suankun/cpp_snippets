@@ -34,3 +34,15 @@ int main() {
 
     return 0;
 }
+//
+#include <sstream>
+using namespace std;
+
+bool is_turing_equation(std::string s){
+    std::string reversed {s.rbegin(), s.rend()};
+    int res {}, a {}, b {};
+    char symbol;
+    std::stringstream ss {reversed};
+    ss >> res >> symbol >> a >> symbol >> b;
+    return res == a + b;
+}
