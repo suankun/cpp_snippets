@@ -8,7 +8,7 @@ std::string odd_or_even(const std::vector<int> &arr)
   if (sum % 2 == 0) return "even";
   else return "odd";
 }
-////////////////
+//
 #include <string>
 #include <vector>
 #include <numeric>

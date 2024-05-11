@@ -1,8 +1,7 @@
 // https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/train/cpp
 #include <iostream>
-using namespace std;
-
 #include <string>
+using namespace std;
 
 int solve(std::string s){
     int max = 0;

@@ -13,5 +13,5 @@ int divisions(const int& n, const int& divisor) {
 #include <cmath>
 
 int divisions(const int& n, const int& divisor) {
-  return log(n) / log(divisor);
+    return log(n) / log(divisor);
 }

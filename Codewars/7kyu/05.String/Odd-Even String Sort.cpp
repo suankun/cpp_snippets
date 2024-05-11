@@ -13,7 +13,7 @@ string sortMyString(const string &s)
     result += even + ' ' + odd;
     return result;
 }
-//////
+//
 using namespace std;
 
 string sortMyString(const string &s)

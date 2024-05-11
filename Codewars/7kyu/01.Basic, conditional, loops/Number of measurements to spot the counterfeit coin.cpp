@@ -1,8 +1,7 @@
 // https://www.codewars.com/kata/59530d2401d6039f8600001f/train/cpp
 #include <iostream>
-using namespace std;
-
 #include <cmath>
+using namespace std;
 
 unsigned int howManyMeasurements(unsigned int n) {
     // Base case: If there is only one coin, no weighings are needed.

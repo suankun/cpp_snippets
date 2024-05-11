@@ -25,7 +25,7 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 #include <vector>
 #include <algorithm>
 using namespace std; 
