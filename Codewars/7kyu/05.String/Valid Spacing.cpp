@@ -28,3 +28,10 @@ int main() {
 bool valid_spacing(const std::string& s) {
     return s.front() != ' ' && s.back() != ' ' && s.find("  ") == s.npos;
 }
+//
+#include <string>
+#include <regex>
+
+bool valid_spacing(const std::string& s) {
+    return !std::regex_search(s, std::regex("[ ]{2,}|(^ )|( $)")); // write your code here
+}
