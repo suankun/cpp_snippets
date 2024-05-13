@@ -14,3 +14,10 @@ double dot_product(const Vector& a, const Vector& b) {
 double dot_product(const Vector& a, const Vector& b){
     return a.x * b.x + a.y * b.y + a.z * b.z;
 }
+//
+#include <iomanip>
+
+double dot_product(const Vector& a, const Vector& b){
+    std::cout << std::setprecision(6);
+    return (a.x * b.x) + (a.y * b.y) + (a.z * b.z); 
+}
