@@ -21,13 +21,13 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 #include <vector>
 #include <algorithm>
 #include <numeric>
 #include <functional>
 
 int maxProduct (std::vector<int>numbers , int sub_size) {
-  std::nth_element(begin(numbers), begin(numbers) + sub_size, end(numbers), std::greater<>{}); 
-  return std::accumulate(begin(numbers), begin(numbers) + sub_size, 1, std::multiplies<>{});
+    std::nth_element(begin(numbers), begin(numbers) + sub_size, end(numbers), std::greater<>{}); 
+    return std::accumulate(begin(numbers), begin(numbers) + sub_size, 1, std::multiplies<>{});
 }

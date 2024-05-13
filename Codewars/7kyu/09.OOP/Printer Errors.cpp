@@ -6,17 +6,17 @@ class Printer
 {
 public:
     static std::string printerError(const std::string &s){
-      int num {};
-      for (size_t i {}; i<s.length(); i++) {
-        if (s[i]>='a' && s[i]<='m') continue;
-        else num++;
-      }
-      int denom = s.length();
-      std::string result = std::to_string(num) + '/' + std::to_string(denom);
-      return result;
+        int num {};
+        for (size_t i {}; i<s.length(); i++) {
+            if (s[i]>='a' && s[i]<='m') continue;
+            else num++;
+        }
+        int denom = s.length();
+        std::string result = std::to_string(num) + '/' + std::to_string(denom);
+        return result;
     };
 };
-/////
+//
 // class Printer
 // {
 // public:

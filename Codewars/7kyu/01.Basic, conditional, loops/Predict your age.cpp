@@ -1,5 +1,4 @@
 // https://www.codewars.com/kata/5aff237c578a14752d0035ae/train/cpp
-
 #include <iostream>
 using namespace std;
 
@@ -18,7 +17,7 @@ int main() {
 
     return 0;
 }
-//////////////
+//
 #include <math.h>
 int predictAge(int age1, int age2, int age3, int age4, int age5, int age6, int age7, int age8)
 {
