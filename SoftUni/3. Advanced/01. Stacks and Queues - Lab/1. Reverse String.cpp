@@ -18,10 +18,17 @@ int main() {
         text.push(*it);
     }
 
+
+    // while(!text.empty()) {
+    //     cout << text.top();
+    //     text.pop();
+    // }
+
     while(text.size()) {
         cout << text.top();
         text.pop();
     }
+    
     
     return 0;
 }
