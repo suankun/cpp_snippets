@@ -10,8 +10,12 @@ int main() {
 
     stack<char> text;
 
-    for (int i = 0; i < line.length(); i++) {
-        text.push(line[i]);
+    // for (int i = 0; i < line.length(); i++) {
+    //     text.push(line[i]);
+    // }
+    
+    for (string::iterator it = line.begin(); it != line.end(); it++) {
+        text.push(*it);
     }
 
     while(text.size()) {
@@ -19,6 +23,5 @@ int main() {
         text.pop();
     }
     
-
     return 0;
 }
