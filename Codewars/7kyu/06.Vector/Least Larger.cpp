@@ -27,3 +27,21 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+#include <cstddef>
+#include <limits>
+
+std::ptrdiff_t least_larger(const std::vector<int>& a, std::size_t i)
+{
+    ptrdiff_t res = -1;
+    int min = a[i];
+    int max = std::numeric_limits<int>::max();
+    for(std::size_t idx = 0; idx < a.size(); idx++){
+        if(a[idx] > min && a[idx] < max){
+        max = a[idx];
+        res = idx;
+        }
+    }
+    return res;
+}
