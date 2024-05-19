@@ -32,3 +32,29 @@ int main() {
     
     return 0;
 }
+//
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    string text;
+    getline(cin, text);
+
+    stack<char> st;
+    // for (int i = 0; i < text.length(); i++)
+    //     st.push(text[i]);
+
+    for (char ch : text)
+        st.push(ch);
+
+    while (st.size()) {
+        cout << st.top();
+        st.pop();
+    }
+
+    cout << endl;
+    
+
+    return 0;
+}
