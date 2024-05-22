@@ -4,6 +4,8 @@
         "bitset": "cpp",
         "algorithm": "cpp",
         "format": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "ostream": "cpp",
+        "vector": "cpp"
     }
 }
