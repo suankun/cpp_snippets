@@ -28,3 +28,10 @@ int main() {
     
     return 0;
 }
+//
+long long solve(const std::string &s, size_t k) {
+    long long max = 0;
+    for (size_t i = 0, h = s.size() - k; i <= k; ++i)
+        max = std::max(max, std::stoll(s.substr(i, h)));
+    return max;
+}
