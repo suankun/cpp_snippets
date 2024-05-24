@@ -6,11 +6,17 @@
 
 using namespace std;
 
+struct toLower {
+    char operator() (char from) {
+        return ::tolower(from);
+    }
+};
+
 int main() {
     string line;
     getline(cin, line);
 
-    transform(line.begin(), line.end(), line.begin(), ::towlower);
+    transform(line.begin(), line.end(), line.begin(), toLower());
 
     set<string> words;
     string currWord;
