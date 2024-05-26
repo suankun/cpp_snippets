@@ -35,3 +35,17 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+
+int get_section_id(int n, std::vector<int> a) {
+    int t = 0;
+    size_t p = count_if(a.begin(),a.end(),[&t,n](int a) {t += a; return t <= n;});
+    return p == a.size() ? -1 : p ;
+}
+//
+int get_section_id( int n, std::vector< int > a ) {
+    for ( size_t i{}; i < a.size(); i++ )
+        if (( n -= a[ i ]) < 0 ) return i;
+    return -1;
+}
