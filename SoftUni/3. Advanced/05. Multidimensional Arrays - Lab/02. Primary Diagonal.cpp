@@ -15,12 +15,15 @@ int main() {
     }
 
     int sum = 0;
-    for (int rows = 0; rows < n; rows++) {
-        for (int cols = 0; cols < n; cols++) {
-            if (rows == cols)
-                sum += matrix[rows][cols];
-        }
-    }
+    // for (int rows = 0; rows < n; rows++) {
+    //     for (int cols = 0; cols < n; cols++) {
+    //         if (rows == cols)
+    //             sum += matrix[rows][cols];
+    //     }
+    // }
+
+    for (int currIndex = 0; currIndex < n; currIndex++)
+        sum += matrix[currIndex][currIndex];
 
     cout << sum << endl;
 
