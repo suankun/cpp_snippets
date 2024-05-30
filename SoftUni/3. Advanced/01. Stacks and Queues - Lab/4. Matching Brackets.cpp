@@ -25,3 +25,21 @@ int main() {
 
     return 0;
 }
+//
+int main() {
+    string expr;
+    getline(cin, expr);
+    
+    stack<size_t> st;
+
+    for (size_t i = 0; i < expr.length(); i++) {
+        if (expr[i] == '(')
+            st.push(i);
+        else if (expr[i] == ')') {
+            cout << expr.substr(st.top(), i - st.top() + 1) << endl;
+            st.pop();
+        }
+    }
+
+    return 0;
+}

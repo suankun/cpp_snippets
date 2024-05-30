@@ -106,3 +106,52 @@ int main() {
 
     return 0;
 }
+//
+#include <iostream>
+#include <stack>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int main() {
+    stack<char> st;
+    string line;
+
+    getline(cin, line);
+    istringstream issInit(line);
+    int num;
+    while(issInit >> num)
+        st.push(num);
+    
+
+    while (getline(cin, line) && line != "end")
+    {
+        istringstream iss(line);
+        string command;
+        iss >> command;
+        if (command == "add") {
+            int n1, n2;
+            iss >> n1 >> n2;
+            st.push(n1);
+            st.push(n2);
+        }
+        else {
+            int n;
+            iss >> n;
+            if (n <= st.size())
+                while (n--)
+                    st.pop();
+        }
+    }
+    
+    int sum = 0;
+    while (st.size())
+    {
+        sum += st.top();
+        st.pop();
+    }
+    
+    cout << sum << endl;
+
+    return 0;
+}
