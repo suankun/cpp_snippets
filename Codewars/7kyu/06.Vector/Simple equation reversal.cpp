@@ -40,3 +40,42 @@ std::string solve(std::string eq) {
     
     return result;
 }
+//
+#include <string>
+
+bool is_action(char symbol)
+{
+    return symbol == '/' || symbol == '*' || symbol == '+' || symbol == '-';
+}
+
+std::string next_number(const char * eq)
+{
+    return *eq == '\0' || is_action(*eq) ? "" : (*eq + next_number(eq + 1));
+}
+
+std::string help(const char * eq)
+{
+    if (*eq == '\0') return "";
+    if (is_action(*eq)) return help(eq + 1) + *eq;
+    std::string str = next_number(eq);
+    return help(eq + str.size()) + str;
+}
+
+std::string solve(std::string eq)
+{
+    return help(&(eq[0]));
+}
+//
+using namespace std;
+std::string solve(std::string eq){
+ for (int i = 0; i < eq.size(); i++)
+	{
+		if (isdigit(eq[i]) && isdigit(eq[i + 1]))
+			swap(eq[i], eq[i + 1]);
+	}
+
+	reverse(eq.begin(), eq.end());
+
+	return eq;
+  
+}
