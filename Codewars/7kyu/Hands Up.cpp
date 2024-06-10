@@ -17,3 +17,18 @@ using persons_t = std::array<int, 3>;
 persons_t get_positions(int n) {
     return {n % 3, (n % 9) / 3, (n % 27) / 9};
 }
+//
+#include <array>
+
+using persons_t = std::array<int, 3>;
+
+persons_t get_positions(int n) {
+    persons_t res{};
+  
+    for (int i = 0; i < 3; ++i) {
+        res[i] = n % 3;
+        n /= 3;
+    }
+  
+    return res;
+}
