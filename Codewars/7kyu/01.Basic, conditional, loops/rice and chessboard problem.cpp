@@ -3,15 +3,15 @@
 using namespace std;
 
 unsigned int squaresNeeded(long long n) {
-  if (n == 0) return 0;
-  long long res {1};
-  unsigned int squares {1};
-  while (res < n) {
-    res *= 2;
-    if (res > n) break;
-    squares++;
-  }
-  return squares;
+    if (n == 0) return 0;
+    long long res {1};
+    unsigned int squares {1};
+    while (res < n) {
+        res *= 2;
+        if (res > n) break;
+        squares++;
+    }
+    return squares;
 }
 
 int main() {
@@ -25,14 +25,14 @@ int main() {
 //
 unsigned int squaresNeeded(long long n)
 {
-  if(n == 0)
-  {
-    return 0;
-  }
-  else
-  {
-    return 1 + squaresNeeded(n / 2);
-  }
+    if(n == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1 + squaresNeeded(n / 2);
+    }
 }
 //
 #include <cmath>

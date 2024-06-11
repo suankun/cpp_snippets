@@ -21,7 +21,7 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 std::string replaceAll(std::string str) {
-  return str.substr(0, str.find('#'));
+    return str.substr(0, str.find('#'));
 }
