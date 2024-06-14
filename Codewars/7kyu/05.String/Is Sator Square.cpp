@@ -29,3 +29,18 @@ bool is_sator_square(const std::vector<std::vector<char>>& tablet) {
 
     return true;
 }
+//
+#include <vector>
+
+bool is_sator_square(const std::vector<std::vector<char>>& tablet) {
+    const std::size_t size = tablet.size();
+    for(std::size_t i = 0; i < size / 2; ++i) {
+        for(std::size_t j = 0; j < size; ++j) {
+            if(tablet[i][j] != tablet[size - i - 1][size - j - 1]) return false;
+            if(tablet[j][i] != tablet[size - j - 1][size - i - 1]) return false;
+            if(tablet[j][i] != tablet[size - i - 1][size - j - 1]) return false;
+            if(tablet[i][j] != tablet[size - j - 1][size - i - 1]) return false;
+        }
+    }
+    return true;
+}
