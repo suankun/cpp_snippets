@@ -43,3 +43,23 @@ std::unordered_map<std::string, std::vector<std::string>> conjugate(std::string 
     conjugations[verb] = forms;
     return conjugations;
 }
+//
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+std::unordered_map<std::string, std::vector<std::string>> conjugate(const std::string& verb)
+{
+	const std::string suffix{ verb.cend() - 2, verb.cend() };
+	const std::string without_suffix{ verb.begin(), verb.end() - 2 };
+	const std::vector<std::string> forms
+	{
+		without_suffix + "o",
+		without_suffix + (suffix == "ar" ? "as" : "es"),
+		without_suffix + (suffix == "ar" ? "a" : "e"),
+		without_suffix + (suffix == "ar" ? "amos" : suffix == "er" ? "emos" : "imos"),
+		without_suffix + (suffix == "ar" ? "áis" : suffix == "er" ? "éis" : "ís"),
+		without_suffix + (suffix == "ar" ? "an" : "en")
+	};
+	return { {verb, forms} };
+}
