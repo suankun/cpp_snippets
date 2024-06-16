@@ -51,3 +51,28 @@ void check_is_contained(int **mat1, const int mat2[3][3],const int nrows, const 
         if(row!=-1)break;
     }
 }
+//
+using namespace std;
+
+void check_is_contained(int **mat1, const int mat2[3][3], const int nrows, const int ncols, int &row, int &col)
+{
+    for (row = 0; row < nrows - 2; row++)
+    {
+        for (col = 0; col < ncols - 2; col++)
+        {
+            for (int k = 0; k < 3; k++)
+            {
+                for (int l = 0; l < 3; l++)
+                {
+                    if (mat1[row + k][col + l] != mat2[k][l])
+                        goto next_col;
+                }
+            }
+            return;
+
+            next_col:;
+        }
+    }
+    row=-1;
+    col=-1;
+}
