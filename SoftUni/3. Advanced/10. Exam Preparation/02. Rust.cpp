@@ -54,6 +54,8 @@ void fixTempRust(char matrix[DIMENSION][DIMENSION+1]) {
 int main()
 {
     char matrix[DIMENSION][DIMENSION+1] = {0};
+    // +1 in order to print rows like a strings in printMatrix(),
+    // because every row will have 0 in the end
 
     for (size_t row = 0; row < DIMENSION; row++)
         for (size_t col = 0; col < DIMENSION; col++)
