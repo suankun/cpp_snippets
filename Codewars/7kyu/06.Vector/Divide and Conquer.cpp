@@ -27,3 +27,18 @@ int main()
 
     return 0;
 }
+//
+#include <vector>
+#include <variant>
+
+int divCon(const std::vector<std::variant<int, char>>& arr)
+{
+    int result{0};
+    
+    for (const auto x : arr)
+    {
+        result += std::get_if<int>(&x) ? std::get<int>(x) : '0' - std::get<char>(x);
+    }
+
+    return result;
+}
