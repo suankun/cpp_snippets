@@ -7,7 +7,7 @@ int pairs(std::vector<int>arr){
     }
     return count;
 }
-///////////
+//
 #include <cstdlib>
 
 int pairs(std::vector<int>arr){

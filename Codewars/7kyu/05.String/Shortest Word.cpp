@@ -29,7 +29,7 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 // #include <cctype>
 // #include <string>
 

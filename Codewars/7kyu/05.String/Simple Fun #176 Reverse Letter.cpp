@@ -21,7 +21,7 @@ int main() {
     return 0;
 }
 
-//////////////
+//
 // std::string reverse_letter(const std::string &str)
 // {
 //     std::stringstream result;
@@ -36,17 +36,17 @@ int main() {
     
 //     return result.str();
 // }
-/////////////
+//
 #include <string>
 
 using namespace std; 
 
 string reverse_letter(const string &str)
 {
-  string noiseFree = "" ; 
-  
-  for (int i = str.length()-1 ; i >=0 ;i--)
-  {if (isalpha(str[i])) {noiseFree += str[i]; }}
+    string noiseFree = "" ; 
+    
+    for (int i = str.length()-1 ; i >=0 ;i--)
+    {if (isalpha(str[i])) {noiseFree += str[i]; }}
 
-  return noiseFree ; 
+    return noiseFree ; 
 }
