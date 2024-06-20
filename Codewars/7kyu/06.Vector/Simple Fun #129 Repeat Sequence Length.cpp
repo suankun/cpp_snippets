@@ -50,3 +50,33 @@ int repeat_sequence_len( int a ) {
     } while ( a > 9 );
     return 8;
 }
+//
+#include <vector>
+int repeat_sequence_len(int a0)
+{
+	int res = 0;
+	std::vector<int> digits;
+	std::vector<int> results;
+
+	while (res >= 0)
+	{
+		//split number into digits
+		for (a0 = a0; a0 > 0; a0 /= 10) digits.push_back(a0 % 10);
+
+		//sum up the square of digits
+		a0 = 0;
+		for (size_t i = 0; i < digits.size(); i++)
+		{
+			a0 += digits[i] * digits[i];
+		}
+		digits.clear();
+
+		//check if the result already existed
+		for (size_t i = 0; i < results.size(); i++)
+		{
+			if (a0 == results[i]) return results.size() - i;
+		}
+		results.push_back(a0);
+	}
+	return res;
+}
