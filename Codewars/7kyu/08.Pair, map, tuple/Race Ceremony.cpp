@@ -30,3 +30,15 @@ std::tuple<int, int, int> racePodium(int blocks) {
 
     return std::make_tuple(a, b, c);
 }
+//
+#include <algorithm>
+#include <tuple>
+#include <cmath>
+
+std::tuple<int, int, int> racePodium(int blocks) 
+{
+    const int first  = static_cast<int>(std::round((blocks + 1.0) / 3.0 + 1.0));
+    const int second = std::min(first - 1, blocks - first - 1);
+    const int third  = blocks - first - second;
+    return std::make_tuple(second, first, third);
+}
