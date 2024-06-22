@@ -52,3 +52,23 @@ int main() {
 
     return 0;
 }
+//
+#include <cmath>
+#include <string>
+
+double toIndustrial(int time){
+    return std::round(time * 100 / 60.0) / 100.0;
+}
+
+double toIndustrial(std::string time){
+    auto c = time.find(':');
+    auto h = std::stoi(time.substr(0, c));
+    auto m = std::stoi(time.substr(c + 1));
+    return toIndustrial(h * 60 + m);
+}
+  
+std::string toNormal(double time){
+    auto h = (int) time * 100 / 100;
+    int m = round((time - h) * 60);
+    return std::to_string(h) + ":" + std::to_string(m);
+}
