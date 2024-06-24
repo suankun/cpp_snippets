@@ -64,3 +64,19 @@ std::vector<int> addingShifted(std::vector<std::vector<int>> arrayOfArrays, int 
     
     return res;
 }
+//
+#include <vector>
+#include <algorithm>
+#include <functional>
+
+std::vector<int> addingShifted(std::vector<std::vector<int>> arrayOfArrays, int shift){
+    arrayOfArrays.front().resize(arrayOfArrays.front().size() + shift * (arrayOfArrays.size() - 1));
+  
+    auto iter = std::next(arrayOfArrays.front().begin(), shift);
+    std::for_each(std::next(arrayOfArrays.begin()), arrayOfArrays.end(), [&iter, shift](auto& v){
+      std::transform(v.begin(), v.end(), iter, iter, std::plus<int>());
+      iter = std::next(iter, shift);
+    });  
+                                          
+    return arrayOfArrays.front();
+}
