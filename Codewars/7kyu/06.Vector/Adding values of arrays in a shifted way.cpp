@@ -45,3 +45,22 @@ int main()
 
     return 0;
 }
+//
+std::vector<int> addingShifted(std::vector<std::vector<int>> arrayOfArrays, int shift) {
+    int newSize = arrayOfArrays[0].size() + shift * (arrayOfArrays.size() - 1);
+    std::vector<int> res(newSize, 0);
+    
+    for (int i = 1; i < (int)arrayOfArrays.size(); i++) {
+        for (int j = 0; j < shift * i; j++) {
+            arrayOfArrays[i].insert(arrayOfArrays[i].begin(), 0);
+        }
+    }
+    
+    for (std::vector<int> a : arrayOfArrays) {
+        for (int i = 0; i < (int)a.size(); i++) {
+            res[i] += a[i];
+        }
+    }
+    
+    return res;
+}
