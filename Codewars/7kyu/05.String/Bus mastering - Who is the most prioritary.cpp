@@ -17,3 +17,14 @@ std::string arbitrate(const std::string& input, int n){
   
   return res;
 }
+//
+#include <algorithm>
+#include <string>
+
+std::string arbitrate(const std::string& input, int n) {
+    std::string res(input.size(), '0');
+    const auto iOne = input.find('1');
+    if (iOne != std::string::npos)
+        res[iOne] = '1';
+    return res;
+}
