@@ -42,3 +42,15 @@ int main()
 
     return 0;
 }
+//
+// #include <string>
+// #include <fnmatch.h>
+
+// bool solve(const std::string& a, const std::string& b) { 
+//     return fnmatch(a.c_str(), b.c_str(), 0) == 0;
+// }
+//
+bool solve(std::string a, std::string b){  
+    return (b.find(a.substr(0, a.find("*"))) != std::string::npos) &&
+            (b.find(a.substr(a.find("*") + 1)) != std::string::npos);
+}
