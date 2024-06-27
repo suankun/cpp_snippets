@@ -18,3 +18,23 @@ unsigned int findBall(Scales scales) {
     }
   }
 }
+//
+#include<vector>
+
+unsigned int findBall(Scales scales) {
+// call scales.getWeight() max 4 times
+// return indexOfHeavyBall;
+  for (unsigned int i = 1; i < 8; i+=2) {
+        std::vector<int> leftPan{i - 1};
+        std::vector<int> rightPan{i};
+        int w = scales.getWeight(leftPan, rightPan);
+
+        if (w == -1) {// left pan is heavier
+            return leftPan[0];
+        }
+
+        if (w == 1) {// right pan is heavier
+            return rightPan[0];
+        }
+    }
+}
