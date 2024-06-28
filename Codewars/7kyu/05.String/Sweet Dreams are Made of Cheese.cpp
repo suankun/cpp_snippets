@@ -28,3 +28,8 @@ int main()
 
     return 0;
 }
+//
+// string payCheese(vector<int> arr){
+//     int sum = accumulate(arr.begin() , arr.end() , 0);
+//     return "£" +  to_string(int(ceil(sum / 100.0) * 4 * 8.75));
+// }
