@@ -39,7 +39,7 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 // #include <algorithm>
 // #include <string>
 // #include <vector>

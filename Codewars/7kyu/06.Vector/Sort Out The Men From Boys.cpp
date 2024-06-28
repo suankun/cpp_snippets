@@ -4,8 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-
-
 vector <int> menFromBoys (vector <int> values)
 {
     vector <int> even, odd, res;
@@ -41,10 +39,10 @@ int main() {
 #include <vector>
 
 std::vector<int> menFromBoys(std::vector<int> values) {
-  auto iMid = std::partition(values.begin(), values.end(), [](auto x) { return x % 2 == 0; });
-  std::sort(values.begin(), iMid);
-  std::sort(iMid, values.end(), std::greater<>());
-  auto iNewEnd = std::unique(values.begin(), values.end());
-  values.erase(iNewEnd, values.end());
-  return values;
+    auto iMid = std::partition(values.begin(), values.end(), [](auto x) { return x % 2 == 0; });
+    std::sort(values.begin(), iMid);
+    std::sort(iMid, values.end(), std::greater<>());
+    auto iNewEnd = std::unique(values.begin(), values.end());
+    values.erase(iNewEnd, values.end());
+    return values;
 }
