@@ -42,3 +42,34 @@ int main()
 
     return 0;
 }
+//
+#include <vector>
+
+using namespace std;
+
+// Getting the common greatest factor;
+int commonGreatestFactor(int number1, int number2)
+{
+    for(int i = min(number1, number2); i > 0; i--)
+    {
+        if(number1 % i == 0 && number2 % i == 0)
+            return i;
+    }
+
+    return 1;
+}
+
+vector<int> relativelyPrime(int n, vector<int> list)
+{
+    vector<int> final_l;
+
+    for(auto number: list)
+    {
+        if(commonGreatestFactor(n, number) == 1)
+        {
+            final_l.push_back(number);
+        }
+    }
+
+    return final_l;
+}
