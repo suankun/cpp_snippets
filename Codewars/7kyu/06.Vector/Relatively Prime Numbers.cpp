@@ -47,7 +47,6 @@ int main()
 
 using namespace std;
 
-// Getting the common greatest factor;
 int commonGreatestFactor(int number1, int number2)
 {
     for(int i = min(number1, number2); i > 0; i--)
