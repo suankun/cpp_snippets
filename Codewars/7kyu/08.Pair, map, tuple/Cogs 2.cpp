@@ -11,3 +11,12 @@ pair<double, double> cog_rpm(const vector<int> &cogs, int n)
     double second_value = d[(cogs.size() - n + 1) % 2] * static_cast<double>(cogs[n]) / cogs[cogs.size() - 1];
     return {first_value, second_value};
 }
+//
+using namespace std;
+
+pair<double, double> cog_rpm(const vector<int>& cogs, const int n) {
+    return {
+        (               n  % 2 ? -1. :  1.) * cogs[n] / cogs.front(),
+        ((cogs.size() - n) % 2 ?  1. : -1.) * cogs[n] / cogs.back()
+    };
+}
