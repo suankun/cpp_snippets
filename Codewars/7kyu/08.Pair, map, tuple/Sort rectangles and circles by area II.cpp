@@ -23,3 +23,20 @@ vec_rect_circle sort_by_area(vec_rect_circle v) {
     });
     return v;
 }
+//
+#include <utility>
+#include <vector>
+#include <cmath>
+
+using vec_rect_circle = std::vector<std::pair<double, double>>;
+
+vec_rect_circle sort_by_area(vec_rect_circle v) {
+    auto area = [] (auto x) {
+        static const double pi = acos(-1);
+        return ((x.second == 0) ? (pi * x.first * x.first) : (x.first * x.second));
+    };
+    std::sort(v.begin(), v.end(), [&] (const auto x, const auto y) {
+        return area(x) < area(y);
+    });
+    return v;
+}
