@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-
 string strong_num(int number ) {
     int sum {}, num {number};
     while (num > 0) {
@@ -30,20 +29,20 @@ using namespace std;
 
 int Factorial(int n)
 {
-  int f = 1;
-  for (int i = 1; i <= n; ++i)
-  {
-    f *= i;
-  }
-  return f;
+    int f = 1;
+    for (int i = 1; i <= n; ++i)
+    {
+        f *= i;
+    }
+    return f;
 }
 
 string strong_num(int number)
 {
-  int n = 0;
-  for (int i = number; i > 0; i /= 10)
-  {
-    n += Factorial(i % 10);
-  }
-  return number == n ? "STRONG!!!!" : "Not Strong !!";
+    int n = 0;
+    for (int i = number; i > 0; i /= 10)
+    {
+        n += Factorial(i % 10);
+    }
+    return number == n ? "STRONG!!!!" : "Not Strong !!";
 }

@@ -2,7 +2,7 @@
 int angle(int n) {
   return  (n-2)*180;
 }
-///////////
+//
 #define 🙌 ( 
 #define 🎁 return 
 #define 🤞 )
