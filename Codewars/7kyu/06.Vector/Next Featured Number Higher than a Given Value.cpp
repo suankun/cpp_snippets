@@ -53,3 +53,21 @@ int main() {
 
     return 0;
 }
+//
+bool test(long val) {
+    if (val % 3 != 0) return false;
+    if (val % 2 != 1) return false;
+    bool sample[10] = {};
+    for (; val; val /= 10) {
+        const unsigned d = val % 10;
+        if (sample[d]) return false;
+        sample[d] = true;
+    }
+    return true;
+}
+
+long nextNumb(long val) {
+    if (val >= 9999999999) return -1;
+    while (!test(++val));
+    return val;
+}
