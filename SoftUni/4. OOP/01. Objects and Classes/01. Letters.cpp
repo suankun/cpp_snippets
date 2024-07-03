@@ -7,11 +7,8 @@
 using namespace std;
 
 class Words {
-
-    public:
-        typedef set<string> WordData;
-
     private:
+        typedef set<string> WordData;
         WordData data;
 
     public:
