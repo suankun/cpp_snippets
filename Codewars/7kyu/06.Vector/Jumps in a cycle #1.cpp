@@ -27,3 +27,10 @@ int main() {
 
     return 0;
 }
+//
+#include <numeric>
+#include <vector>
+
+long getJumps(const std::vector<int>& cycle, long long k) {
+    return cycle.size() / std::gcd(cycle.size(), k);
+}
