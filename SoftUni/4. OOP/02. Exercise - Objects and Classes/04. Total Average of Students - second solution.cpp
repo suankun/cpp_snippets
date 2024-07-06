@@ -12,9 +12,15 @@ class Student {
 
     public:
 
+        Student() {}
+
+        Student(istream & istr) {
+            read(istr);
+        }
+
         void read(istream & istr);
 
-        void print(ostream & ostr);
+        string toString();
 
         double getTotalAverage(void) { return totalAverage; }
 };
@@ -23,8 +29,12 @@ void Student::read(istream & istr) {
     istr >> name >> surname >> totalAverage;
 }
 
-void Student::print(ostream & ostr) {
-    ostr << name << ' ' << surname << ' ' << totalAverage << endl; 
+string Student::toString() {
+    ostringstream ostr;
+
+    ostr << name << ' ' << surname << ' ' << totalAverage;
+
+    return ostr.str();
 }
 
 int main() {
@@ -40,17 +50,12 @@ int main() {
     }
 
     while (totalStudents--)
-    {
-        Student s;
-        s.read(cin);
-
-        data.push_back(s);
-    }
+        data.push_back(Student(cin));
     
     double grandTotalAverage = 0;
     for (Student & curr : data) {
         grandTotalAverage += curr.getTotalAverage();
-        curr.print(cout);
+        cout << curr.toString() << endl;
     }
 
     grandTotalAverage /= data.size();
