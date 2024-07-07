@@ -17,3 +17,14 @@ std::string solve(int n) {
     
     return fn;
 }
+//
+std::string solve(int n){
+    if (n == 0) return "0";
+    std::string f0 = "0", f = "01", temp;
+    while (--n > 0) {
+        temp = f;
+        f += std::move(f0);
+        f0 = std::move(temp);
+    }
+    return f;
+}
