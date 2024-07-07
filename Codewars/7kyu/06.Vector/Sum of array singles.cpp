@@ -1,9 +1,9 @@
 // https://www.codewars.com/kata/59f11118a5e129e591000134/train/cpp
 #include <iostream>
-using namespace std;
-
 #include <vector>
 #include <algorithm>
+
+using namespace std;
 
 int repeats(std::vector<int>v){
     int sum=0;
@@ -29,8 +29,8 @@ int main() {
 #include<algorithm>
 
 int repeats(std::vector<int>v){
-  int sum = 0;
-  for (int n: v)
-    sum += n* (std::count (v.begin(), v.end(), n) == 1);   
-  return sum;      
+    int sum = 0;
+    for (int n: v)
+        sum += n* (std::count (v.begin(), v.end(), n) == 1);   
+    return sum;      
 }

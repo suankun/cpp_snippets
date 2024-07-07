@@ -5,11 +5,11 @@
 using namespace std;
 
 class SequenceSum{
-  int count;
-  public:
-  SequenceSum (int);
-  string showSequence();
-  
+    int count;
+    public:
+    SequenceSum (int);
+    string showSequence();
+    
 };
 
 string SequenceSum::showSequence(){
@@ -28,7 +28,7 @@ string SequenceSum::showSequence(){
 }
 
 SequenceSum::SequenceSum (int c) {
-  count = c;
+    count = c;
 }
 
 int main() {
@@ -44,14 +44,14 @@ int main() {
 using namespace std;
 
 class SequenceSum{
-  int count;
-  public:
-  SequenceSum (int);
-  string showSequence();
+    int count;
+    public:
+    SequenceSum (int);
+    string showSequence();
 };
 
 SequenceSum::SequenceSum (int c) {
-  count = c;
+    count = c;
 }
 
 string SequenceSum::showSequence(){

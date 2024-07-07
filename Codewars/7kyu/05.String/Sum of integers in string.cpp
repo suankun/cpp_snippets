@@ -1,8 +1,8 @@
 // https://www.codewars.com/kata/598f76a44f613e0e0b000026/train/cpp
 #include <iostream>
-using namespace std;
-
 #include <string>
+
+using namespace std;
 
 int sumOfIntegers(const std::string& str) {
     int sum = 0;
@@ -21,7 +21,6 @@ int sumOfIntegers(const std::string& str) {
 
     return sum;
 }
-
 
 int main() {
     string one = "The Great Depression lasted from 1929 to 1939.";
