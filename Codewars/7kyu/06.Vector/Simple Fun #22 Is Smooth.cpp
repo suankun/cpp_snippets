@@ -30,4 +30,11 @@ int main() {
 
     return 0;
 }
+//
+#include<vector>
 
+bool isSmooth(const std::vector<int>& arr)
+{
+    int midVal = arr.size() / 2, ex = 1 - arr.size() % 2;
+    return  arr.front() == arr.back() &&   arr.front() ==  arr[midVal] + ex *  arr[midVal- ex];
+}
