@@ -10,7 +10,7 @@ int sumTriangularNumbers(int n) {
     }
     return sum;
 }
-//////////
+//
 // unsigned int sumTriangularNumbers(const int n)
 // {
 //   return n<0 ? 0 : n*(n+1)*(n+2)/6 ;
