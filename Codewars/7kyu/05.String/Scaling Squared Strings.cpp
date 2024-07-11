@@ -48,4 +48,29 @@ int main() {
 
     return 0;
 }
+//
+class ScalingSqStrings
+{
+public:
+    static std::string scale(const std::string &strng, int k, int n);
+};
 
+std::string ScalingSqStrings::scale(const std::string &strng, int k, int n)
+{
+    if (strng == "")
+        return "";
+
+    std::string line;
+    std::stringstream res;
+    std::stringstream ss(strng);
+    while (getline(ss, line, '\n')) {
+        std::string newLine = "\n";
+        for (auto c : line)
+            newLine += std::string(k, c);
+
+        for (int i = 0; i < n; i++)
+            res << newLine;
+    }
+    
+    return res.str().substr(1);
+}
