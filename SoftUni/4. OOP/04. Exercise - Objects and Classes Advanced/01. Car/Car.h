@@ -1,3 +1,6 @@
+#ifndef CAR_H 
+#define CAR_H 
+
 using namespace std;
 
 class Car {
@@ -23,3 +26,4 @@ class Car {
 
 };
 
+#endif // !CAR_H

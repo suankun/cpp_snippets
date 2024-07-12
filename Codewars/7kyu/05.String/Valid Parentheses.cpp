@@ -3,13 +3,19 @@
 #include <string>
 
 bool validParentheses(const std::string& str) {
-    int parentheses {};
-    for (size_t i {}; i<str.length(); i++) {
-        if (str[i]=='(') parentheses++;
-        else parentheses--;
-        if (parentheses<0) return false;
+    int parentheses = 0;
+    for (size_t i = 0; i<str.length(); i++) {
+        if (str[i] == '(')
+            parentheses++;
+        else
+            parentheses--;
+
+        if (parentheses < 0)
+            return false;
     }
-    if (parentheses!=0) return false;
+    if (parentheses != 0)
+        return false;
+
     return true;
 }
 
@@ -25,12 +31,13 @@ int main() {
 #include <string>
 
 bool validParentheses(const std::string& str) {
-  int count = 0;
+    int count = 0;
 
-  for (auto ch : str) {
-    ch == '(' ? count++ : count--;
-    if (count < 0) return false;
-  }
-  
-  return !count;
+    for (auto ch : str) {
+        ch == '(' ? count++ : count--;
+        if (count < 0)
+            return false;
+    }
+    
+    return !count;
 }
