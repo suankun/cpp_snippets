@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <sstream>
 
 std::vector<std::string> operator + (const std::vector<std::string> & a, const std::vector<std::string> & b) {
     std::vector<std::string> res;
@@ -11,6 +12,14 @@ std::vector<std::string> operator + (const std::vector<std::string> & a, const s
 
     for (size_t idx = 0; idx < a.size(); idx++)
         res.push_back(a[idx] + " " + b[idx]);
+
+    // for (size_t idx = 0; idx < a.size(); idx++) {
+    //     std::ostringstream ostr;
+
+    //     ostr << a[idx] + ' ' + b[idx];
+
+    //     res.push_back(ostr.str());
+    // }
 
     return res;
 }
