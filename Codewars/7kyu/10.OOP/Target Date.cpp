@@ -79,3 +79,38 @@ int main() {
 
     return 0;
 }
+//
+// #include <iomanip>
+// #include <sstream>
+// #include <ctime>
+// #include <cmath>
+
+// class DateDays
+// {
+// private:
+//     static void DatePlusDays(struct tm* date, int days);
+// public:
+//     static std::string dateNbDays(double a0, double a, double p);
+// };
+
+// void DateDays::DatePlusDays(struct tm* date, int days)
+// {
+//     const time_t ONE_DAY = 24 * 60 * 60;
+//     time_t date_seconds = mktime( date ) + (days * ONE_DAY);
+//     *date = *localtime(&date_seconds);
+// }
+
+// std::string DateDays::dateNbDays(double a0, double a, double p)
+// {
+//     struct tm date = { 0, 0, 12 };
+//     int year = 2016; int month = 1; int day = 1;
+//     date.tm_year = year - 1900;
+//     date.tm_mon = month - 1;
+//     date.tm_mday = day;
+//     int r = static_cast<int>(std::ceil(std::log(a / a0) / std::log(1 + p / 36000.0)));
+//     DatePlusDays(&date, r);
+//     std::ostringstream oss;
+//     oss << std::put_time(&date, "%Y-%m-%d");
+//     auto str = oss.str();
+//     return str;
+// }
