@@ -35,3 +35,19 @@ std::string stringify(Node* list)
     // Recursive case: return the current node's data and the result of stringify on the next node
     return std::to_string(list->data) + " -> " + stringify(list->next);
 }
+//
+#include <string>
+
+std::string stringify(Node* list)
+{
+    std::string result{};
+    while(list)
+    {
+        result += std::to_string(list->data) + " -> ";
+        list = list->next;
+    }
+    result += "nullptr";
+    
+    return result;
+}
+
