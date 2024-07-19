@@ -9,3 +9,11 @@ std::vector<int> showBits(int n) {
     }
     return bits;
 }
+//
+std::vector<int> showBits(int n, std::vector<int> ret = {})
+{
+    for (int i = 31; i >= 0; i--)
+        ret.push_back((n >> i) & 1);
+    
+    return ret;
+}
