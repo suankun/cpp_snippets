@@ -10,8 +10,9 @@
 
                 "${file}",  // current file compilation
 
-                // "${fileDirname}/Article13Filter.cpp",
-                // "${fileDirname}/CensorshipMain.cpp",
+                // "${fileDirname}/ContactManagerUI.cpp",
+                // "${fileDirname}/EchoMain.cpp",
+                // "${fileDirname}/EmailContact.cpp",
                 
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
