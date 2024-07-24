@@ -14,3 +14,18 @@ std::vector<std::string> friendOrFoe(const std::vector<std::string>& input)
 
     return friends;
 }
+//
+#include <algorithm>
+#include <string>
+#include <vector>
+
+std::vector<std::string> friendOrFoe(const std::vector<std::string>& input)
+{
+    std::vector<std::string> friends;
+    std::copy_if(input.begin(), input.end(), std::back_inserter(friends), [](const std::string& s)
+    {
+            return s.size() == 4;
+    });
+
+    return friends.empty() ? std::vector<std::string>{""} : friends;
+}
