@@ -25,3 +25,9 @@ bool are_coprime(unsigned int a, unsigned int b) {
 
     return intersection.size() == 1;
 }
+//
+#include <numeric>
+
+bool are_coprime(unsigned a, unsigned b) {
+    return std::gcd(a, b) == 1;
+}
