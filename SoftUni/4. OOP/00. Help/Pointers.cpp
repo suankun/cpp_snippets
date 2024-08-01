@@ -4,6 +4,25 @@ using namespace std;
 
 #include <vector>
 
+#include <iostream>
+#include <vector>
+
+class Company {
+public:
+    Company() {
+        std::cout << "Company created\n";
+    }
+
+    ~Company() {
+        std::cout << "Company destroyed\n";
+    }
+
+    static int getSize() {
+        return 5;
+    }
+};
+
+
 int main() {
     /////----- int -----/////
     // poiter to 10 int numbers
@@ -54,6 +73,27 @@ int main() {
     // delete
     for (int i = 0; i < 10; i++)
         delete vec2[i];
+
+
+    /////----- object -----/////
+    // Create a vector of Company pointers
+    std::vector<Company*> vec;
+    vec.resize(Company::getSize());
+
+    // Initialize the pointers with new Company objects
+    for (int i = 0; i < Company::getSize(); ++i)
+        vec[i] = new Company(); // Dynamically allocate Company objects
+
+    // delete
+    for (Company* company : vec)
+        delete company; // Delete each Company object
+    
+    // Optionally, clear the vector
+    vec.clear(); // Remove all elements from the vector (not strictly necessary)
+
+
+    // Array of poiters of object
+    Company* c = new Company();
 
 
     return 0;
