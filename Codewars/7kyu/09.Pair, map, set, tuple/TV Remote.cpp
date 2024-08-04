@@ -49,3 +49,18 @@ int main() {
 
     return 0;
 }
+//
+#include <cstdlib>
+using namespace std;
+
+int tv_remote(const string &word) {
+    const static string keyboard{"abcde123fghij456klmno789pqrst.@0uvwxyz_/"};
+    int sum = 0;
+    std::div_t point{0,0};
+    for (auto c: word) {
+        std::div_t next = std::div(keyboard.find(c), 8);
+        sum += abs(point.rem - next.rem) + abs(point.quot - next.quot) + 1;
+        point = next;
+    };
+    return sum;
+}
