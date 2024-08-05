@@ -23,3 +23,10 @@ int main() {
 
     return 0;
 }
+//
+int content_weight(int bottle_weight, std::string scale)
+{
+    int n = std::stoi(scale);
+    bottle_weight /= n + 1;
+    return scale.find("larger") != std::string::npos ? bottle_weight * n : bottle_weight; 
+}
