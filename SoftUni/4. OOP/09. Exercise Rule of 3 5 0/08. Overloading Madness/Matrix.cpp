@@ -43,13 +43,6 @@ Matrix & Matrix::operator/=(const Matrix & other) {
 
 // friend
 std::ostream & operator<<(std::ostream & os, const Matrix & matrix) {
-
-    // for (int row = 0; row < matrix._data.size(); row++) {
-    //     for (int col = 0; col < matrix._data[row].size(); col++) {
-    //         os << matrix._data[row][col] << ' ';
-    //     }
-    //     os << std::endl;
-    // }
     
     for (auto row : matrix._data) {
         for (auto cell : row)
