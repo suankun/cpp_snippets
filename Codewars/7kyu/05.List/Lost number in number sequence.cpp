@@ -13,3 +13,17 @@ int findDeletedNumber(list<int> startingList, list<int> mixedList)
   
     return 0;
 }
+//
+#include <numeric>
+
+using namespace std;
+
+
+int findDeletedNumber(list<int> startingList, list<int> mixedList)
+{
+    int sumStarting = std::accumulate(startingList.begin(), startingList.end(), 0);
+    
+    int sumMixed = std::accumulate(mixedList.begin(), mixedList.end(), 0);
+    
+    return sumStarting - sumMixed;
+}
