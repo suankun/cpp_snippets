@@ -5,11 +5,9 @@
   #include <climits>
 
   int solve(std::vector<std::vector<int>> arr) {
-      // Initial min and max values (like new IntSummaryStatistics(2, 1, 1, 2) in Java)
       int minVal = 1;
       int maxVal = 1;
 
-      // Iterate over each array in the 2D vector
       for (const auto& array : arr) {
           int localMin = *std::min_element(array.begin(), array.end());
           int localMax = *std::max_element(array.begin(), array.end());
@@ -24,3 +22,14 @@
       return maxVal;
   }
 //
+int solve(std::vector<std::vector<int>> v){
+    int min = 1, max = 1;
+    for(std::vector<int> inner : v)
+    {
+        int y = *std::min_element(inner.begin(), inner.end()), x = *std::max_element(inner.begin(), inner.end());
+        std::vector<int> a = { min * y, min * x, max * y, max * x };
+        min = *std::min_element(a.begin(), a.end());
+        max = *std::max_element(a.begin(), a.end());
+    }
+    return max;
+ }
