@@ -20,3 +20,12 @@ std::string pattern(int n)
 
     return result;
 }
+//
+std::string pattern(int n)
+{
+    std::string s;
+    for (int i = 0; i < n; i++, s += "\n")
+        for (int j = 0; j < n; j++)
+            s += std::to_string((i + j) % n + 1);
+    return s.substr(0, s.size()-1);
+}
