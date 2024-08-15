@@ -10,7 +10,7 @@ class AverageAggregator : public StreamAggregator {
 
     public:
 
-        AverageAggregator(std::istream & istr) : StreamAggregator(istr) {
+        AverageAggregator(std::istream & istr) : StreamAggregator(istr), sum(0) {
             aggregationResult = INT_MAX;
         }
 
