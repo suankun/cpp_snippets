@@ -21,3 +21,15 @@ std::string pattern(int n) {
 
     return result;
 }
+//
+#include <string>
+
+std::string pattern(int n){
+    std::string res;
+    for(int i = 0; i < n; i++){
+        for(int j = n; j >= n - i; j--)
+        res += std::to_string(j);
+        res += "\n";
+    }
+    return res.substr(0, res.size() - 1);
+}
