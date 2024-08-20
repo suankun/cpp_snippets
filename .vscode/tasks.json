@@ -10,8 +10,8 @@
 
                 "${file}",  // current file compilation
 
-                // "${fileDirname}/ListMain.cpp",
-                // "${fileDirname}/List.cpp",
+                // "${fileDirname}/main.cpp",
+                // "${fileDirname}/Company.cpp",
                 // "${fileDirname}/EmailContact.cpp",
                 
                 "-o",
