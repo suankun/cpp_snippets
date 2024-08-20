@@ -28,3 +28,19 @@ std::string itinerary(std::vector<Route> travel) {
 
     return result;
 }
+//
+std::string itinerary(std::vector<Route> travel)
+{
+    std::string unique{};
+    
+    unique.append(travel[0].in + '-' + travel[0].out);
+    
+    for (int i = 1; i < travel.size(); ++i)
+    {
+        if (travel[i - 1].out != travel[i].in)
+        unique.append( '-' + travel[i].in);
+        unique.append('-' + travel[i].out);
+    }
+
+    return unique;
+}
