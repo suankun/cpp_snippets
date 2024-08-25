@@ -10,10 +10,10 @@
 
                 "${file}",  // current file compilation
 
-                // "${fileDirname}/BattleCruser.cpp",
-                // "${fileDirname}/Carrier.cpp",
-                // "${fileDirname}/others.cpp",
-                // "${fileDirname}/Phoenix.cpp",
+                // "${fileDirname}/main.cpp",
+                // "${fileDirname}/DateTime.cpp",
+                // "${fileDirname}/Meetings.cpp",
+                // "${fileDirname}/Yacht.cpp",
                 // "${fileDirname}/ProtossAirShip.cpp",
                 // "${fileDirname}/TerranAirShip.cpp",
                 // "${fileDirname}/Viking.cpp",
