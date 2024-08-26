@@ -28,3 +28,7 @@ int main() {
 
     return 0;
 }
+//
+long long groupSize( long long S,long long D ) {
+    return round( sqrt( 2 * D + S * S - S ) );
+}
