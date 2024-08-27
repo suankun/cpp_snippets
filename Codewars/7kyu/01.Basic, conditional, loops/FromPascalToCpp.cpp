@@ -16,4 +16,20 @@ int fromPascalToCpp(int Sum, int finish, int start)
     end
     return Sum;
 }
+//
+#define begin do
+#define repeat {
+#define until if
+#define end }while(start<finish)
 
+
+int fromPascalToCpp(int Sum, int finish, int start)
+{
+	begin
+		repeat
+		  Sum = Sum + start;
+	    start = start + 1;
+	  until(start>=finish);
+	end;
+	return Sum;
+}
