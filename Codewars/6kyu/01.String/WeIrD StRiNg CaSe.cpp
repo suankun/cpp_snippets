@@ -34,3 +34,19 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <string_view>
+
+std::string to_weird_case(const std::string_view str) {
+    std::string res{str};
+    std::transform(res.cbegin(), res.cend(), res.begin(),
+                   [isupper = false](const char c) mutable {
+                       if (c == ' ') isupper = true;
+                       return (isupper = !isupper) ? std::toupper(c)
+                                                   : std::tolower(c);
+                   });
+    return res;
+}
