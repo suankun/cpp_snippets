@@ -18,3 +18,13 @@ int distance(int n) {
     
     return layer + midpointOffset;
 }
+//
+#include <cmath>
+
+int distance(int n)
+{
+    int layer = ceil(sqrt(n))/2;
+    int rem = n-std::pow(2*layer-1, 2);
+    
+    return layer ? layer + std::abs(rem % (2*layer) - layer) : 0;
+}
