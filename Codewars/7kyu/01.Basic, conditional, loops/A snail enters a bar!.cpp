@@ -3,3 +3,8 @@ bool canSnailReachEnd(double length, double speed, double lengthIncreases)
 {
     return (speed - lengthIncreases) * 60 * 24 * 365 > length ? true : false;
 }
+//
+bool canSnailReachEnd(double length, double speed, double lengthIncreases)
+{
+    return (speed - lengthIncreases) * 60 * 24 * 365 > length;
+}
