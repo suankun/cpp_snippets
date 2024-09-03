@@ -1,6 +1,8 @@
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 #include <string.h>
+
+using namespace std;
 
 int k;                           // ���� �� �������� ����������
 const int SIZE = 12;             // ���������� ������� �� ���
