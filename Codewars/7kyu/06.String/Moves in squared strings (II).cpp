@@ -56,3 +56,30 @@ int main() {
 
     return 0;
 }
+//
+// #include <vector>
+// #include <iterator>
+
+// class Opstrings1
+// {
+// public:
+//     static std::string rot(const std::string &strng) {
+//         std::string result(strng);
+//         std::reverse(begin(result),end(result));
+//         return result;
+//     }
+//     static std::string selfieAndRot(const std::string &strng) {
+//         std::istringstream iss(strng);
+//         std::vector<std::string> results((std::istream_iterator<std::string>(iss)),
+//                                          std::istream_iterator<std::string>());
+//         std::string result;
+//         for_each(begin(results), end(results), [&](auto s) {result.append(s+std::string(s.size(),'.')+"\n");});
+//         result.pop_back();
+//         result.append("\n"+rot(result));
+//         return result;
+//     }
+//     template<typename Func>
+//     static std::string oper(Func func, const std::string &s) {
+//         return func(s);
+//     }
+// };
