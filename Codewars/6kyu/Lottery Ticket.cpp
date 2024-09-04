@@ -4,9 +4,6 @@
 #include <vector>
 using namespace std;
 
-#include <string>
-#include <vector>
-
 std::string bingo(std::vector<std::pair<std::string, int>> ticket, int win)
 {
     int count {};
