@@ -54,3 +54,25 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+
+std::string countFeelings(std::string s, std::vector<std::string> arr) {
+    int count = 0;
+    bool flag = false;
+    std::string tmp(s);
+    
+    for (auto feeling : arr) {
+        tmp = s;
+        for (auto letter : feeling) {
+        auto pos = tmp.find(letter);
+        
+        flag = pos != std::string::npos;
+        if (flag) tmp.erase(pos, 1);
+        else break;
+        }
+        if (flag) count++;
+    }
+    
+    return std::to_string(count) + " feeling" + (count == 1 ? "." : "s.");
+}
