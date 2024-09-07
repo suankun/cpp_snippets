@@ -62,3 +62,24 @@ namespace coding {
         return result;
     }
 }
+//
+#include <unordered_map>
+namespace coding {
+    const std::unordered_map<char, std::string> codes = {
+        {'0', "10"}, {'1', "11"}, {'2', "0110"}, {'3', "0111"}, {'4', "001100"}, {'5', "001101"}, {'6', "001110"}, {'7', "001111"}, {'8', "00011000"}, {'9', "00011001"}
+    };
+    std::string code(const std::string &strng) {
+        std::string result;
+        for (char c : strng) result += codes.at(c);
+        return result;
+    }
+    std::string decode(const std::string &str) {
+        std::string result, temp;
+        for (char c : str) {
+            temp += c;
+            for (const auto& [k, v] : codes)
+                if (v == temp) { result += k; temp.clear(); break; }
+        }
+        return result;
+    }
+}
