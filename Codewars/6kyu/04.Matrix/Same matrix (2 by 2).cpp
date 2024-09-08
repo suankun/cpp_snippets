@@ -71,3 +71,23 @@ int main() {
 
     return 0;
 }
+//
+#include <vector>
+#include <array>
+#include <set>
+
+int count_different_matrices(const std::vector<std::array<int, 4>> &matrices) {
+    std::set<int> values;
+    
+    for(size_t i = 0; i < matrices.size(); i++) {
+        int hash = std::min(
+            std::min(matrices[i][0] * 1000 + matrices[i][1] * 100 + matrices[i][2] * 10 + matrices[i][3],
+                    matrices[i][2] * 1000 + matrices[i][0] * 100 + matrices[i][3] * 10 + matrices[i][1]),
+            std::min(matrices[i][3] * 1000 + matrices[i][2] * 100 + matrices[i][1] * 10 + matrices[i][0],
+                    matrices[i][1] * 1000 + matrices[i][3] * 100 + matrices[i][0] * 10 + matrices[i][2])
+        );
+        values.insert(hash);
+    }
+
+    return values.size();
+}
