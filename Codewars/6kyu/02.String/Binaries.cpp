@@ -70,7 +70,8 @@ namespace coding {
     };
     std::string code(const std::string &strng) {
         std::string result;
-        for (char c : strng) result += codes.at(c);
+        for (char c : strng)
+            result += codes.at(c);
         return result;
     }
     std::string decode(const std::string &str) {
@@ -78,7 +79,11 @@ namespace coding {
         for (char c : str) {
             temp += c;
             for (const auto& [k, v] : codes)
-                if (v == temp) { result += k; temp.clear(); break; }
+                if (v == temp) {
+                    result += k;
+                    temp.clear();
+                    break;
+                }
         }
         return result;
     }
