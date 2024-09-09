@@ -22,3 +22,18 @@ std::vector<std::string> coin_flips(int flips) {
 
     return coinFlips;
 }
+//
+#include <vector>
+#include <algorithm>
+
+std::vector<std::string> coin_flips(int flips) 
+{
+    std::vector<std::string> ret;
+    for (int i = 0; i <= flips; ++i) {
+        std::string s = std::string(i, 'H') + std::string(flips-i, 'T');
+        do {
+            ret.push_back(s);
+        } while (std::next_permutation(s.begin(), s.end()));
+    }
+    return ret;
+}
