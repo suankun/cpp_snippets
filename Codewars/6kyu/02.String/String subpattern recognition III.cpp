@@ -29,3 +29,22 @@ std::string hasSubpattern(const std::string& str) {
 
     return result;
 }
+//
+#include <map>
+
+int GCD(int a, int b) {
+    return b == 0 ? a : GCD(b, a % b);
+}
+
+std::string hasSubpattern(const std::string& str) {
+    std::map<char, int> symbol_frequencies;
+    for (char c : str) ++symbol_frequencies[c];
+        
+    int gcd = 0;
+    for (auto& f : symbol_frequencies) gcd = GCD(f.second, gcd);
+
+    std::string res;
+    for (auto& f : symbol_frequencies) res.append(f.second / gcd, f.first);
+    
+    return res;
+}
