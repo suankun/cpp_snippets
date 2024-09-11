@@ -30,17 +30,17 @@ int main()
 
     return 0;
 }
-/////////
+//
 #include <cmath>
 using namespace std;
 class DigPow
 {
 public:
-  static int digPow(int n, int p){
-   long long sum=0;
-   for(char digit : to_string(n)){
-     sum+=pow(digit-'0',p++);
-   }
-   return (sum/n)*n==sum ? sum/n : -1;
-  }
+    static int digPow(int n, int p) {
+        long long sum=0;
+        for(char digit : to_string(n)){
+            sum+=pow(digit-'0',p++);
+        }
+        return (sum/n)*n==sum ? sum/n : -1;
+    }
 };
