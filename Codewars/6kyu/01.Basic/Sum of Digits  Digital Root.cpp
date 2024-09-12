@@ -20,3 +20,7 @@ int main()
 	
 	return 0;
 }
+//
+int digital_root(int n) {
+    return --n % 9 + 1;
+}
