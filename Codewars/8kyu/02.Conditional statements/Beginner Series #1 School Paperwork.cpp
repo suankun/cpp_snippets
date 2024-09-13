@@ -1,4 +1,14 @@
-// https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/csharp
+// https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/cpp
+
+// Your classmates asked you to copy some paperwork for them. You know that there 
+// are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+
 int paperwork(int n, int m) {
     if (n < 0 || m < 0) {
         return 0;
@@ -8,5 +18,36 @@ int paperwork(int n, int m) {
 }
 //
 int paperwork(int n, int m) {
-  return n < 0 || m < 0 ? 0 : n * m;
+    return n < 0 || m < 0 ? 0 : n * m;
+}
+/// oop solution ///
+class Paperwork {
+    int n;
+    int m;
+
+public:
+    Paperwork(int n, int m)
+        : n(n), m(m) {}
+
+    bool checkNegative() {
+        return n < 0 || m < 0;
+    }
+
+    int calc() {
+        if (checkNegative())
+            return 0;
+
+        return n * m;
+    }
+
+};
+
+int paperwork(int n, int m) {
+    Paperwork p(n, m);
+    return p.calc();
+}
+
+int main() {
+
+    return 0;
 }
