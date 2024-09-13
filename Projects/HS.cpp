@@ -12,15 +12,25 @@ using namespace std;
 // positive integer and denoted by that integer and an exclamation point. Thus, factorial seven is 
 // written 7!, meaning 1 × 2 × 3 × 4 × 5 × 6 × 7. Factorial zero is defined as equal to 1.
 
+// int fact(int num) {
+
+//     int i = num + 1;
+//     num = 1;
+
+//     while (--i)
+//         num *= i;
+
+//     return num;
+// }
+
 int fact(int num) {
+	int sum = 1;
 
-    int i = num + 1;
-    num = 1;
+	do {
+		sum *= num;
+	} while (--num);
 
-    while (--i)
-        num *= i;
-
-    return num;
+	return sum;
 }
 
 void perfectNumber() {
