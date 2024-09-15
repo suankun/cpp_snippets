@@ -7,3 +7,10 @@ unsigned int countBits(unsigned long long n) {
     }
     return count;
 }
+//
+#include <limits>
+#include <bitset>
+inline constexpr unsigned int countBits(const unsigned long long n) noexcept {
+    std::bitset<std::numeric_limits<unsigned long long>::digits> b(n);
+    return b.count();
+}
