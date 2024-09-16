@@ -29,3 +29,21 @@ std::string coin(int n) {
     
     return output;
 }
+//
+#include <cmath>
+
+std::string coin(int n){
+    std::string result(n, 'H'), key(result);
+    for (int i(1); i < std::pow(2, n); i++) {
+        for (int j(n - 1); j >= 0; j--){
+            if (key[j] == 'T') {
+                key[j] = 'H';
+            } else {
+                key[j] = 'T';
+                break;
+            }
+        }
+        result += ',' + key;
+    }
+    return result;
+}
