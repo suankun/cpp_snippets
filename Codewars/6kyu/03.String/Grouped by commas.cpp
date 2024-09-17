@@ -37,6 +37,19 @@ int main() {
 }
 //
 #include <string>
+
+std::string group_by_commas(int n)
+{
+    std::string strNumber = std::to_string(n);
+
+    for (int i = strNumber.length() - 3; i > 0; i -= 3)
+        strNumber.insert(i, ",");
+
+
+    return strNumber;
+}
+//
+#include <string>
 #include <locale>
 #include <sstream>
 #include <memory>
