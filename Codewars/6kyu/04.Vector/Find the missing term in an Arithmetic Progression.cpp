@@ -19,3 +19,10 @@ int main() {
 
     return 0;
 }
+//
+static long findMissing(std::vector<long> list){
+    long diff = (list.back() - list.front()) / static_cast<long>(list.size());
+    for (int i = 0; i < list.size(); ++i)
+        if (list[i] + diff != list[i + 1])
+            return list[i] + diff;
+}
