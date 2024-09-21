@@ -39,3 +39,47 @@ int main() {
 
     return 0;
 }
+// 
+int count(int k)
+{
+	int r = 0;
+
+	while (k != 0)
+	{
+		if (k % 2 == 1)
+			r++;
+
+		k /= 2;
+	}
+
+	return r;
+}
+
+int nextHigher(int value)
+{
+	int expected = count(value);
+
+	value++;
+
+	while (expected != count(value))
+		value++;
+
+	return value;
+}
+//
+#include <bitset>  
+#include <limits> 
+using namespace std;
+int nextHigher(int value)
+{    
+    std::bitset<std::numeric_limits<int>::digits> first(value);
+	while (true)
+	{
+		value++;
+		std::bitset<std::numeric_limits<int>::digits> second(value);
+		if (first.count() == second.count())
+		{
+			return value;
+		}
+	}
+}
