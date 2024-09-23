@@ -11,24 +11,19 @@ std::vector<std::string> set_table(const std::vector<std::string>& the_dead) {
     // Earthenware, Waterfall, Fireplace, Windowsill
     std::vector<std::string> fourAncientNames = {"QUTHCRDMZ", "WEVOXING", "JFABKPLY", "SSSSSSSSS"};
 
-    // Keep track of next available slots
     std::vector<std::vector<int>> grandTable = {{0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6},
                                                 {3, 2, 4, 1, 5, 0, 6, 11, 7, 10, 8, 9},
                                                 {6, 5, 7, 4, 8, 3, 9, 2, 10, 1, 11, 0},
                                                 {9, 8, 10, 7, 11, 6, 0, 5, 1, 4, 2, 3}};
 
-    for (const std::string & s : the_dead) {
-        for (int i = 0; i < fourAncientNames.size(); ++i) {
-            if (fourAncientNames[i].find(s[0]) != std::string::npos) {
-                for (int index : grandTable[i]) {
+    for (const std::string & s : the_dead)
+        for (int i = 0; i < fourAncientNames.size(); ++i)
+            if (fourAncientNames[i].find(s[0]) != std::string::npos)
+                for (int index : grandTable[i])
                     if (setting[index] == "_____") {
                         setting[index] = s;
                         break;
                     }
-                }
-            }
-        }
-    }
 
     return setting;
 }
