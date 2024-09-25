@@ -62,3 +62,18 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+
+class Kata
+{
+public:
+    std::vector<int> sortArray(std::vector<int> array)
+    {
+        std::vector<int> odds;
+        std::copy_if(array.begin(), array.end(), std::back_inserter(odds), [] (int x) {return x % 2;});
+        std::sort(odds.begin(), odds.end());
+        for (int i = 0, j = 0; i < array.size(); i++) if (array[i] % 2) array[i] = odds[j++];
+        return array;
+    }
+};
