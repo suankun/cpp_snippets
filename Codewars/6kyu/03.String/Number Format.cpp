@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-
 std::string numberFormat(long long n){
     std::string num = std::to_string(n);
     std::string res;

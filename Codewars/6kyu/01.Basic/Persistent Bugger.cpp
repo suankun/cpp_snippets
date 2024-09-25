@@ -25,10 +25,10 @@ int main() {
 
     return 0;
 }
-///////////////
+//
 int persistence(long long n) {
-  long long p = 1;
-  if (n < 10) { return 0; } 
-  while (n > 0) { p = (n % 10) * p; n = n/10; }
-  return persistence(p) + 1;
+    long long p = 1;
+    if (n < 10) { return 0; } 
+    while (n > 0) { p = (n % 10) * p; n = n/10; }
+    return persistence(p) + 1;
 }
