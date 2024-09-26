@@ -88,3 +88,24 @@ int main() {
     
 //     return decoded;
 // }
+//
+// std::string decodeMorse(std::string morseCode) {
+//     std::string decoded;
+//     const char* current = morseCode.data(), *end = current + morseCode.size();
+  
+//     while (*current == ' ') current++;
+//     while (end[-1] == ' ') end--;
+    
+//     while (current < end) {
+//         if (*current == ' ') {
+//         decoded += ' ';
+//         current += 2;
+//         } else {
+//         const char* start = current;
+//         while (current < end && *current == '.' || *current == '-') ++current;
+//         decoded += MORSE_CODE[std::string(start, current)];
+//         current++;
+//         }
+//     }
+//     return decoded;
+// }
