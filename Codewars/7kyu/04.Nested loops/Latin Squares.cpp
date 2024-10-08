@@ -32,3 +32,13 @@ std::vector<std::vector<int>> make_latin_square(int n) {
     
     return latin_square;
 }
+//
+std::vector<std::vector<int>> make_latin_square(int n) {
+    std::vector<std::vector<int>> latin_square(n, std::vector<int>(n));
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            latin_square[i][j] = (j + i + 1) > n ? (j + i + 1) % n : j + i + 1;
+    
+    return latin_square;
+}
