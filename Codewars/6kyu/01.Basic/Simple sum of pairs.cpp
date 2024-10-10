@@ -48,3 +48,9 @@ int main() {
     
     return 0;
 }
+//
+int solve(long n){
+    if (!n) return 0;
+    int d1 = n > 9 ? 9 : n, d2 = (n - d1) % 10;
+    return d1 + d2 + solve((n-d1-d2) / 10);
+}
