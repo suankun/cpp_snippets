@@ -56,3 +56,22 @@ int main() {
     
     return 0;
 }
+//
+#include <string>
+#include <algorithm>
+
+namespace PlayPass {
+    std::string playPass(const std::string &s, int n) {
+        std::string result(s);
+        std::transform(s.begin(), s.end(), result.begin(), [&, isEven = true](const char& i) mutable -> const char {
+            isEven = !isEven;
+            if(i >= 'A' && i <= 'Z')
+                return 'A' + (i+n-'A')%26 + (isEven ? 'a'-'A' : 0);
+            else if(i >= '0' && i <= '9')
+                return '9' - i + '0';
+            else
+                return i;
+        });
+        return {result.rbegin(), result.rend()};
+    }
+};
