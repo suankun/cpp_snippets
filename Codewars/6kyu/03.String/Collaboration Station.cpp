@@ -53,3 +53,16 @@ int main() {
     
     return 0;
 }
+//
+std::vector<std::string> splitMessage(std::string message, int count)
+{
+    if(count <= 0)
+        return {};
+
+    std::vector<std::string> result(count, std::string(message.length(), '-'));
+    
+    for(int i = 0; i < message.length(); i++)
+        result[i % count][i] = message[i];
+    
+    return result;
+}
