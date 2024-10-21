@@ -33,3 +33,18 @@ int countSmileys(std::vector<std::string> arr)
     }
     return count;
 }
+//
+#include<map>
+using namespace std;
+
+static map<string, int> mp = {{":)",1},{":-)",1},{":~)",1},
+                              {":D",1},{":-D",1},{":~D",1},
+                              {";D",1},{";-D",1},{";~D",1},
+                              {";)",1},{";-)",1},{";~)",1}};
+
+int countSmileys(std::vector<std::string> arr)
+{
+    int res = 0;
+    for(auto i: arr) res += mp[i];
+    return res;
+}
