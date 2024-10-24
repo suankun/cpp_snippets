@@ -16,3 +16,12 @@ std::string replace_dots(const std::string& str)
 {
     return std::regex_replace(str, std::regex{ R"(\.)" }, "-");
 }
+//
+#include <string>
+#include <algorithm>
+
+std::string replace_dots(const std::string& str) {
+    auto s = str;
+    std::replace(s.begin(),s.end(),'.', '-');
+    return s;
+}
