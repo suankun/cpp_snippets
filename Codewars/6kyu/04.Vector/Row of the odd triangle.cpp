@@ -18,10 +18,25 @@
 
 std::vector<unsigned long long> odd_row(unsigned int n) {
     unsigned long long first = static_cast<unsigned long long>(n) * (n - 1) + 1;
+  
     std::vector<unsigned long long> row;
     row.reserve(n);
-    for (unsigned int i = 0; i < n; ++i) {
+  
+    for (unsigned int i = 0; i < n; i++)
         row.push_back(first + i * 2);
-    }
+  
+    return row;
+}
+//
+#include <vector>
+
+std::vector<unsigned long long> odd_row(unsigned long long n) {
+    std::vector<unsigned long long> row(n);
+
+    unsigned long long base = n * (n - 1);
+
+    for (unsigned long long i = 0; i < n; i++)
+        row[i] = base + i * 2 + 1;
+
     return row;
 }
