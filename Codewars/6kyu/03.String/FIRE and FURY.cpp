@@ -110,3 +110,31 @@ std::string fire_and_fury(const std::string& tweet) {
 
     return result;
 }
+//
+#include <string>
+#include <regex>
+#include <algorithm>
+
+std::string fire_and_fury(const std::string& tweet) 
+{
+    std::regex reg (R"(FIRE|FURY)"); std::string letters ("EFIRUY");
+    std::sregex_iterator it = std::sregex_iterator(tweet.begin(), tweet.end(), reg), end;
+    if (it == end || std::any_of(tweet.begin(), tweet.end(), [&](const char& c){
+        return letters.find(c) == std::string::npos;
+        })) return "Fake tweet.";
+    std::string ret;
+    while (it != end) {
+        std::string word = (*it).str(0); int count = 1; ++it;
+        while ((*it).str(0) == word) ++it, ++count;
+        if (word == "FIRE") {
+            std::string s = " You";
+            for (int i = 1; i < count; ++i) s += " and you";
+            ret += s + " are fired!";
+        } else {
+            std::string s = " I am";
+            for (int i = 1; i < count; ++i) s += " really";
+                ret += s + " furious.";
+        }
+    }
+    return ret.substr(1);
+}
