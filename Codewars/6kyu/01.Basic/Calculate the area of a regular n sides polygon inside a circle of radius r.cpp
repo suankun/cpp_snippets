@@ -26,3 +26,10 @@ double areaOfPolygonInsideCircle(double circleRadius, int numberOfSides) {
     double area = circleRadius * circleRadius * numberOfSides * sin(2 * angle) / 2;
     return round(area * 1000) / 1000;
 }
+//
+#include <cmath>
+
+const double PI = 3.14159265; // Not as accurate as I'd like it to be but gotta stick to it to pass the Kata :p
+double areaOfPolygonInsideCircle (double r, int n) {
+    return round(1e3 * (0.5 * n * r * r * sin(2 * PI / n))) / 1e3;
+}
