@@ -63,3 +63,13 @@ private:
         return node->value + std::max(leftMaxSum, rightMaxSum);
     }
 };
+//
+class Solution {
+  public:
+    static int maxSum(TreeNode* root) {
+        if (!root) return 0;
+        int left = root->value + maxSum(root->left);
+        int right = root->value + maxSum(root->right);
+        return std::max(left, right);
+    }
+};
