@@ -79,3 +79,47 @@ public:
         return result.str();
     }
 };
+//
+#include <algorithm>
+#include <string>
+
+class Dinglemouse {
+    int s_name = -1, s_age = -1, s_sex = -1;
+    std::string name;
+    int age;
+    char sex;
+
+public:
+    Dinglemouse() {}
+
+    Dinglemouse& setAge(const int age) {
+        if (s_age < 0) s_age = std::max(s_name, s_sex) + 1;
+        this->age = age;
+        return *this;
+    }
+
+    Dinglemouse& setSex(const char sex) {
+        if (s_sex < 0) s_sex = std::max(s_name, s_age) + 1;
+        this->sex = sex;
+        return *this;
+    }
+
+    Dinglemouse& setName(const std::string& name) {
+        if (s_name < 0) s_name = std::max(s_sex, s_age) + 1;
+        this->name = name;
+        return *this;
+    }
+
+    std::string hello() {
+        std::string res = "Hello.";
+        for (int i = 0; i <= s_name || i <= s_age || i <= s_sex; ++i) {
+            if (s_name == i) res += " My name is " + name + ".";
+            if (s_age == i) res += " I am " + std::to_string(age) + ".";
+            if (s_sex == i)
+                res +=
+                    std::string{" I am "} + ('M' == sex ? "male." : "female.");
+        }
+
+        return res;
+    }
+};
