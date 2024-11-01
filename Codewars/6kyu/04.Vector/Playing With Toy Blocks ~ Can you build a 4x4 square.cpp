@@ -57,6 +57,8 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 bool canFormRow(std::vector<int>& blocks, const std::vector<int>& row) {
     std::vector<int> tempBlocks = blocks;
     
@@ -109,4 +111,10 @@ int main() {
     // cout << build_square({1, 3, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1}) << endl;              // false
 
     return 0;
+}
+//
+bool build_square( const std::vector< int >& blocks ) {
+    int q[ 5 ]{}; for ( const int b : blocks ) ++q[ b ];
+    return q[ 4 ] + std::min( q[ 3 ], q[ 1 ] )
+        + ( q[ 2 ] + std::max( q[ 1 ] - q[ 3 ], 0 ) / 2 ) / 2 > 3;
 }
