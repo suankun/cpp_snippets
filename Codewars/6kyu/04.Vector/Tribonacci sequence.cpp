@@ -50,8 +50,7 @@ int main() {
 
     return 0;
 }
-
-/////////////////////////////////////////////////////
+//
 std::vector<int> tribonacci(std::vector<int> signature, int n)
 {
     if(n<3){

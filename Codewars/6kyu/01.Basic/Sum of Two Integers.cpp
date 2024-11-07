@@ -7,6 +7,7 @@ int Add(int x, int y) {
         x = x ^ y;
         y = static_cast<unsigned int>(carry) << 1;
     }
+    
     return x ;
 }
 
@@ -20,10 +21,9 @@ int main() {
 
     return 0;
 }
-///////
+//
 using namespace std; 
 #include <stdio.h> 
-  
 
 int Add (int x, int y)
 {
@@ -44,7 +44,7 @@ int Add (int x, int y)
     }  
     return x; 
 }
-////////////
+//
 int Add(int x, int y)
 {
     if (y == 0) return x;

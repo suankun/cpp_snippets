@@ -1,8 +1,8 @@
 // https://www.codewars.com/kata/5418a1dd6d8216e18a0012b2/train/cpp
 
 #include <iostream>
-using namespace std;
 #include <string>
+using namespace std;
 
 class Kata {
     public:

@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-using namespace std;
 std::string encrypt(std::string text, int n)
 {
     if (text.length() == 0 || n <= 0) return text;

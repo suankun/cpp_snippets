@@ -36,7 +36,7 @@ int main() {
 
     return 0;
 }
-//////////
+//
 #include <cmath>
 #include <iostream>
 

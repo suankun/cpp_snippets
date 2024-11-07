@@ -4,8 +4,6 @@ using namespace std;
 
 // https://www.codewars.com/kata/54da539698b8a2ad76000228/solutions/cpp
 
-#include<vector>
-
 bool isValidWalk(std::vector<char> walk) {
     int e {}, w {}, n {}, s {};
     int min {};
@@ -37,8 +35,7 @@ int main() {
 
     return 0;
 }
-
-//////////////
+//
 #include<vector>
 #include <algorithm> 
 

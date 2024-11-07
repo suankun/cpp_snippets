@@ -42,22 +42,22 @@ int main() {
 
     return 0;
 }
-//////////
+//
 #include <vector>
 #include <math.h>
 std::vector<unsigned int> sumDigPow(unsigned int a, unsigned int b) {
-  std::vector<unsigned int> res;
+    std::vector<unsigned int> res;
+    
+    for(unsigned int i = a; i <= b; i++ )
+    {
+        unsigned int sum = 0;
+        std::string buf = std::to_string(i);
+        for(int j=0; j<buf.length(); j++)
+        {
+            sum += pow(buf[j]-48, j+1);
+        }
+        if(sum==i) res.push_back(i);
+    }
   
-  for(unsigned int i = a; i <= b; i++ )
-  {
-      unsigned int sum = 0;
-      std::string buf = std::to_string(i);
-      for(int j=0; j<buf.length(); j++)
-      {
-          sum += pow(buf[j]-48, j+1);
-      }
-      if(sum==i) res.push_back(i);
-  }
-  
-  return res;
+    return res;
 }
