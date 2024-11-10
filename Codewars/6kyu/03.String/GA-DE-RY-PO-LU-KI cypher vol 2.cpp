@@ -72,3 +72,26 @@ string encode(string str, string key) {
 string decode(string str, string key) {
     return ende(str, key);
 }
+//
+#include <string>
+#include <map>
+#include <cctype>
+
+using namespace std;
+
+string encode(string s, string k) {
+    map<char, char> mapping;
+    for (size_t i = 0; i < k.length(); i += 2) {
+        mapping[k[i]] = k[i + 1];
+        mapping[k[i + 1]] = k[i];
+        mapping[toupper(k[i])] = toupper(k[i + 1]);
+        mapping[toupper(k[i + 1])] = toupper(k[i]);
+    }
+    string result = "";
+    for (size_t i = 0; i < s.length(); i++)
+        result += mapping.find(s[i]) != mapping.end() ? mapping[s[i]] : s[i];
+    return result;
+}
+string decode(string s, string k) {
+    return encode(s, k);
+}
