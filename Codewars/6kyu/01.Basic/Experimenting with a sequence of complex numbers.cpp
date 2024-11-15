@@ -64,3 +64,9 @@ int main() {
 
     return 0;
 }
+//
+#include <complex>
+
+int f(std::complex<double> z, double eps) {
+    return abs(z) < 1 ? log(eps) / log(abs(z)) : -1;
+}
