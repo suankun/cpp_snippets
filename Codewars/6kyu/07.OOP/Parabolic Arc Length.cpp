@@ -55,3 +55,23 @@ int main()
     std::cout << "Length of curve: " << ArcParabLen::lenCurve(n) << std::endl;
     return 0;
 }
+//
+#include <cmath>
+
+class ArcParabLen
+{
+public:
+    static double lenCurve(int n) {
+        double h = 1.0 / n;
+        double l = 0;
+        double x = 0;
+        double y = 0;
+        for(int k = 1; k <= n; k++) {
+            double i = k * h;
+            l += hypot(x - i, y - i * i);
+            x = i;
+            y = i * i;
+        }
+        return l;
+    }  
+};
