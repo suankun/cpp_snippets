@@ -41,3 +41,12 @@ std::vector<unsigned long long> partsSum(const std::vector<unsigned long long>& 
 
     return sums;
 }
+//
+#include <vector>
+#include <numeric>
+
+std::vector<unsigned long long> partsSum(const std::vector<unsigned long long>& xs) {
+    std::vector<unsigned long long> res(xs.size() + 1);
+    std::partial_sum(xs.crbegin(), xs.crend(), res.rbegin() + 1);
+    return res;
+}
