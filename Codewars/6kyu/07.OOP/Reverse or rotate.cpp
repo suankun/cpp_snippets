@@ -94,7 +94,7 @@ int main() {
 //         std::string x = strng.substr(0,sz);
 //         bool p = true;
 //         for(const char& c : x)
-//             if(c % 2 == 1) // '0' == 48, so 'digit' is even iff digit is even 
+//             if(c % 2 == 1) // '0' == 48, so 'digit' is even
 //             p = !p;
 //         if(p){
 //             std::reverse(x.begin(),x.end());
