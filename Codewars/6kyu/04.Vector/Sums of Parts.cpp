@@ -22,9 +22,9 @@
 
 // ls = [744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]
 // parts_sums(ls) -> [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]
+
 // Notes
 // Take a look at performance: some lists have thousands of elements.
-// Please ask before translating.
 
 #include <vector>
 #include <numeric>
@@ -48,5 +48,6 @@ std::vector<unsigned long long> partsSum(const std::vector<unsigned long long>& 
 std::vector<unsigned long long> partsSum(const std::vector<unsigned long long>& xs) {
     std::vector<unsigned long long> res(xs.size() + 1);
     std::partial_sum(xs.crbegin(), xs.crend(), res.rbegin() + 1);
+    
     return res;
 }
