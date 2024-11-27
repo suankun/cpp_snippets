@@ -72,3 +72,34 @@ int main() {
 
     return 0;
 }
+//
+using namespace std;
+
+class SqInRect
+{
+  public:
+  static vector<int> sqInRect(int lng, int wdth);
+};
+
+vector<int> SqInRect::sqInRect(int l, int w) {
+    vector<int> ret;
+
+    if (w == l)
+        return ret;
+
+    if (w > l)
+        swap(l, w);
+
+    while (w > 0) {
+        ret.push_back(w);
+
+        int t = w;
+        w = l - w;
+        l = t;
+
+        if (w > l)
+            swap(l, w);
+    }
+
+    return ret;
+}
