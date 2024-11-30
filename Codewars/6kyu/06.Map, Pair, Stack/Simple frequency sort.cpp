@@ -49,3 +49,13 @@ int main() {
 
     return 0;
 }
+//
+// #include <vector>
+// #include <map>
+
+// std::vector<int> solve(std::vector<int> v) {
+//     std::map<int, int> fr;
+//     for(int n : v) fr[n]++;
+//     std::sort(v.begin(), v.end(), [&](int a, int b){ return (fr[a]>fr[b]) || (fr[a]==fr[b] && a < b); });
+//     return v;
+// }
