@@ -54,3 +54,21 @@ public:
         return res;
     }
 };
+//
+#include <algorithm>
+#include <functional>
+#include <vector>
+
+struct Kata
+{
+    std::vector<int> foldArray(std::vector<int> a, int runs)
+    {
+      for (; runs > 0; --runs) 
+      {
+        const auto half = a.size() / 2;
+        std::transform(std::cbegin(a), std::cbegin(a) + half, std::crbegin(a), std::begin(a), std::plus<int>());
+        a.resize((a.size() + 1) / 2);
+      }
+      return a;
+    }
+};
