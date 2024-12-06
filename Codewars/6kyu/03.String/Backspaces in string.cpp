@@ -36,3 +36,16 @@ int main() {
 
     return 0;
 }
+//
+std::string cleanString(const std::string &s) {
+	std::string result = "";
+	for (auto c : s)
+	{
+		if (c != '#')
+			result.push_back(c);
+		else if(result.size() > 0)
+			result.pop_back();
+	}
+    
+	return result;
+}
