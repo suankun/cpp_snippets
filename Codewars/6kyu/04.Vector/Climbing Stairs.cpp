@@ -61,3 +61,16 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+#include <tuple>
+#include <vector>
+
+int climbing_stairs(const std::vector<int>& cost) {
+    using namespace std;
+    int a = 0, b = 0;
+    for (int c : cost)
+        tie(a, b) = tuple(b, min(a, b) + c);
+        
+    return min(a, b);
+}
