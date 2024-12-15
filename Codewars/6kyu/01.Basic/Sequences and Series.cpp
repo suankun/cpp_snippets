@@ -35,3 +35,7 @@ int main() {
 
     return 0;
 }
+//
+int getScore(int n) {
+    return 25 * n * (n + 1);
+}
