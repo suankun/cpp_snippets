@@ -60,3 +60,11 @@ int main() {
 
     return 0;
 }
+//
+class Finance
+{
+    public:
+    static unsigned long long finance(unsigned long long n){
+        return n * (n+1) * (n+2) / 2;
+    }
+};
