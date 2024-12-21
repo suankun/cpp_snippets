@@ -16,3 +16,7 @@
 unsigned long long hanoi(unsigned disks) {
     return pow(2, disks) - 1;
 }
+//
+unsigned long long hanoi(unsigned disks) {
+    return (1 << disks) - 1;
+}
