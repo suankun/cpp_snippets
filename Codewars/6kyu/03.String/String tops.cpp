@@ -39,6 +39,7 @@ string tops(const string& msg)
 
 int main() {
     std::string msg = "abcdefghijklmnopqrstuvwxyz12345";
-    std::cout << tops(msg) << std::endl; // Test the function
+    std::cout << tops(msg) << std::endl;
+    
     return 0;
 }
