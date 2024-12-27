@@ -62,3 +62,15 @@ int main() {
 
     return 0;
 }
+//
+// #include <vector>
+
+// int most_profit(const std::vector<int>& quotes)
+// {
+//     auto profit = 0;
+//     for (auto it = quotes.begin(); it < quotes.end(); ++it)
+//     {
+//         profit += *std::max_element(it, quotes.end()) - *it;
+//     }
+//     return profit;
+// }
