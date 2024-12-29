@@ -177,3 +177,26 @@ int main() {
 
     return 0;
 }
+//
+#include <sstream>
+std::string pattern(int n)
+{
+    if(n < 1)
+        return "";
+    
+    int a;
+    std::stringstream s;
+    for(int j= -n + 1; j < n; j++) {
+        for(int i= -n + 1; i < n; i++) {
+            a = n - abs(i) - abs(j);
+            if(a < 1)
+                s << " ";
+            else
+                s << a % 10;
+        }
+
+		s << "\n";
+    }
+
+	return s.str().substr(0, s.str().size()-1);
+}
