@@ -32,3 +32,15 @@ int main() {
 
     return 0;
 }
+//
+#include <set>
+
+int nthSmallest(std::vector<std::vector<int>> v, int n)
+{
+	std::multiset<int> s;
+	for (auto x : v) for (auto y : x) s.insert(y);
+	auto it = s.begin();
+	std::advance(it, n - 1);
+    
+	return *it;
+}
