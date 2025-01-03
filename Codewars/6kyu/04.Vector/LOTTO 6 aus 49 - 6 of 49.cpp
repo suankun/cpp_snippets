@@ -82,3 +82,33 @@ int checkForWinningCategory(std::vector<int> checkCombination, std::vector<int> 
     if (count == 2 && s) return 9;
     return -1;
 }
+//
+#include <set>
+
+std::vector<int> numberGenerator()
+{
+    std::set<int> s;
+    while (s.size() < 6)
+        s.insert(std::rand() % 49 + 1);
+
+    std::vector<int> v(s.begin(), s.end());
+    v.push_back(std::rand() % 10);
+
+    return v;
+}
+
+int checkForWinningCategory(std::vector<int> check, std::vector<int> winning)
+{
+    int cat = 14;
+    cat -= 2 * std::count_if(check.begin(), check.end() - 1, [&](int i){
+        return std::find(winning.begin(), winning.end() - 1, i) != winning.end() - 1;
+    });
+
+    if (check.back() == winning.back())
+        cat -= 1;
+        
+    if (cat > 9)
+        cat = -1;
+    
+    return cat;
+}
