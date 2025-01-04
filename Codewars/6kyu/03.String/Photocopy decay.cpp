@@ -216,3 +216,16 @@ int main() {
 // testFalse(gen20, orig);
 
 // testFalse(gen10, orig);
+
+//
+bool isSameOrDecayed(char orig, char copy) {
+    static const std::string decayed = "#+:. ";
+    if (copy == orig) return true;
+    if (std::isalpha(copy)) return copy == std::tolower(orig);
+    auto decayedPos = decayed.find(copy);
+    if (decayedPos == std::string::npos) return false;
+    return std::isalpha(orig) || decayedPos > decayed.find(orig);
+}
+bool generationLoss(const std::string& orig, const std::string& copy) {
+    return std::equal(begin(orig), end(orig), begin(copy), end(copy), isSameOrDecayed);
+}
