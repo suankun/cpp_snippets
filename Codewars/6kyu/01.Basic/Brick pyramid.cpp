@@ -56,3 +56,15 @@ struct Pyramid {
     return 0;
   }
 };
+//
+class Pyramid {
+    public:
+    static double weight(int, int); 
+};
+
+double Pyramid::weight(int row, int pos) {
+    double sum = 0;
+    if (pos > 0) sum += Pyramid::weight(row-1, pos-1) + 1;
+    if (pos < row) sum += Pyramid::weight(row-1, pos-0) + 1;      
+    return sum/2;
+}
