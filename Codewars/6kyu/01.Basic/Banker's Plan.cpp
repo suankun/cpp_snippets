@@ -51,3 +51,16 @@ public:
       return true;
     }
 };
+//
+class BankerPlan
+{
+public:
+    static bool fortune(int f0, double p, int c0, int n, double i);
+};
+
+bool BankerPlan::fortune( int f0, double p, int c0, int n, double i )
+{
+    for( int j = 0; j < n - 1; ++j, c0 *= 1 + i/100 )
+        f0 = f0 * ( 1 + p/100) - c0;
+    return f0 >= 0;
+}
