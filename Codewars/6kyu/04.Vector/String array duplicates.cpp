@@ -59,3 +59,14 @@ int main() {
 
     return 0;
 }
+//
+#include <algorithm>
+#include <string>
+#include <vector>
+
+std::vector<std::string> dup(std::vector<std::string> ss) {
+    for (auto& s : ss)
+        s.erase(std::unique(s.begin(), s.end()), s.end());
+        
+    return ss;
+}
