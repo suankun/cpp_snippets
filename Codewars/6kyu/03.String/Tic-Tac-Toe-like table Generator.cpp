@@ -64,4 +64,27 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+#include <vector>
+#include <sstream>
 
+std::string displayBoard(const std::vector<char>& board, unsigned short width){
+    std::ostringstream oss;
+    unsigned int count = 0;
+    auto end = board.size();
+    std::string rowsSeparator(width*4-1, '-');
+
+    for(const auto& i : board) {
+        count++;
+        oss << ' ' << i << ' ';
+        if(count == end)
+            break;
+        else if(count % width == 0)
+            oss << '\n' << rowsSeparator << '\n';
+        else
+            oss << '|';
+    }
+
+    return oss.str();
+}
