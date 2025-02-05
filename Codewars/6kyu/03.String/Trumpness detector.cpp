@@ -62,3 +62,18 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+#include <regex>
+#include <cmath>
+
+float trump_detector(const std::string &trump_speech)
+{
+    int sum = 0, n = 0;
+    std::regex re("([aeiou])\\1*", std::regex::icase);
+    for (auto it = std::sregex_iterator(trump_speech.begin(), trump_speech.end(), re); it != std::sregex_iterator(); it++) {
+        n++;
+        sum += it->length() - 1;
+    }
+    return n ? std::round(sum * 100.0 / n) / 100 : 0;
+}
