@@ -26,6 +26,7 @@
 #include <vector>
 #include <deque>
 #include <unordered_set>
+#include <algorithm>    
 using namespace std;
 
 std::string vowelShift(std::string text, int n) {
@@ -62,4 +63,19 @@ int main() {
     cout << vowelShift("This is a test!", 3) << endl;  // "This as e tist!"
 
     return 0;
+}
+//
+std::string vowelShift(std::string text, int n)
+{
+    std::vector<char> vowels = { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+    std::vector<std::pair<int,char>> pos;
+    
+    for(int i=0 ; i<text.size() ; i++ )
+        if( std::find(vowels.begin(), vowels.end(), text[i]) != vowels.end() )
+            pos.push_back(std::pair<int,char>(i, text[i]));
+
+    for( int i=0 ; i<pos.size() ; i++ )
+        text[pos[(i+n)%pos.size()].first] = pos[i].second;  
+
+    return text;
 }
