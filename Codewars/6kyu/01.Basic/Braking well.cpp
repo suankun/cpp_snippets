@@ -61,3 +61,38 @@ public:
         }
     }
 };
+//
+#include <cmath>
+
+class Braking
+{
+public:
+    static double dist(double v, double mu);
+    static double speed(double d, double mu);
+    
+private:
+    static const double KMH;
+    static const double g;
+    static double toKMH(double v);
+    static double toMS(double v);
+};
+
+double Braking::dist(double v, double mu)
+{
+    v = toMS(v);
+    double d = v*v / (2*mu*g) + v;
+    return d;
+}
+
+double Braking::speed(double d, double mu)
+{
+    double v = mu * g * (-1 + sqrt(1 + 2 * d / (mu * g)));
+    v = toKMH(v);
+    return v;
+}
+
+const double Braking::KMH = 3.6;
+const double Braking::g = 9.81;
+
+double Braking::toKMH(double v) { return v * KMH; }
+double Braking::toMS(double v) { return v / KMH; }
