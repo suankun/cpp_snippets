@@ -71,3 +71,15 @@ int main() {
 
     return 0;
 }
+//
+#include <string>
+#include <vector>
+
+std::vector<std::string> rotate(const std::string& s) {
+    std::vector<std::string> arr;
+    
+    for(int i = 0; i < s.size(); i++)
+        arr.push_back(s.substr(i + 1, s.size()) + s.substr(0, i + 1));
+
+    return arr;
+}
