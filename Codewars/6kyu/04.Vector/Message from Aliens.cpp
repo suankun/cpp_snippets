@@ -65,3 +65,30 @@ std::string decode(const std::string &m) {
 
     return decodedMessage;
 }
+//
+#include <sstream>
+#include <map>
+
+static std::map<std::string, char> translator = {
+    { "/\\",    'a' },  { "]3",     'b' },  { "(",      'c' },
+    { "|)",     'd' },  { "[-",     'e' },  { "/=",     'f' },
+    { "(_,",    'g' },  { "|-|",    'h' },  { "|",      'i' },
+    { "_T",     'j' },  { "/<",     'k' },  { "|_",     'l' },
+    { "|\\/|",  'm' },  { "|\\|",   'n' },  { "()",     'o' },
+    { "|^",     'p' },  {  "()_",   'q' },  { "/?",     'r' },
+    { "_\\~",   's' },  { "~|~",    't' },  {  "|_|",   'u' },
+    { "\\/",    'v' },  { "\\/\\/", 'w' },  { "><",     'x' },
+    { "`/",     'y' },  { "~/_",    'z' },  { "__",     ' ' },
+};
+
+std::string decode(const std::string &message) {
+    std::stringstream stream(message);
+    std::string letter, result;
+    char delim = message[0];
+
+    while(getline(stream, letter, delim))
+        if(letter.size())
+            result = translator[letter] + result;
+
+    return result;
+}
