@@ -66,3 +66,46 @@ int main() {
     }
     return 0;
 }
+//
+#include <string>
+#include <cstdlib>
+#include <cctype>
+#include <functional>
+
+bool satisfy_generic(std::function<int(int)> f, std::string pwd) {
+    for (char c : pwd) {
+        if (f(c) != 0) return true;
+    }
+    return false;
+}
+
+char get_random_char() {
+    unsigned d = rand() % 62;
+    // Lowercase
+    if (d < 26) return char(d + 'a');
+    // Uppercase
+    if (d < 52) return char(d - 26 + 'A');
+    // Digits
+    if (d < 62) return char(d - 52 + '0');
+    
+    return 0;
+}
+
+std::string generate(unsigned len) {
+    std::string pwd = "";
+    for (unsigned i = 0; i < len; i++)
+        pwd.push_back(get_random_char());
+
+    return pwd;
+}
+
+std::string password_gen() {
+    std::string pwd = generate(rand() % 15 + 6);
+    while (!satisfy_generic(::isupper, pwd) ||
+            !satisfy_generic(::islower, pwd) ||
+            !satisfy_generic(::isdigit, pwd)) {
+        pwd = generate(rand() % 15 + 6);
+    }
+
+    return pwd;
+}
