@@ -50,3 +50,16 @@ int main() {
         
     return 0;
 }
+//
+bool isOre(unsigned n) {
+    unsigned t = 0, c = 0;
+
+    for(unsigned d = 1; d <= n; d++) {
+        if(!(n % d)) {
+            t += d;
+            c += 1;
+        }
+    }
+
+    return !(n * c % t);
+}
