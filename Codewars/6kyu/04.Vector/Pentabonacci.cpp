@@ -55,3 +55,7 @@ int main() {
 
     return 0;
 }
+//
+long countOddPentaFib(long n) {
+    return (n-1)/6 + (n-2)/6 + 1;
+}
