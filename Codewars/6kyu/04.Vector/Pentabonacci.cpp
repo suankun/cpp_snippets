@@ -40,7 +40,9 @@ long long countOddPentaFib(long long n) {
     for (long long i = 5; i <= n; i++) {
         long long temp = pentafib[i-1] + pentafib[i-2] + pentafib[i-3] + pentafib[i-4] + pentafib[i-5];
         pentafib.push_back(temp);
-        if (temp % 2 != 0) count++;
+        
+        if (temp % 2 != 0)
+            count++;
     }
     
     return count;
