@@ -31,3 +31,7 @@
 std::string not_so_random(unsigned b, unsigned w) {
     return b % 2 > 0 ? "Black" : "White";
 }
+//
+std::string not_so_random(unsigned b, unsigned w) {
+    return b % 2 ? "Black" : "White";
+}
