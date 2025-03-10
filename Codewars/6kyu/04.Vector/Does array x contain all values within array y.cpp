@@ -51,3 +51,15 @@ int main() {
         
     return 0;
 }
+//
+#include <vector>
+#include <algorithm>
+
+bool contains_all(const std::vector<int>& arr, const std::vector<int>& target) {
+    for (auto &num : target) {
+        if(std::find(arr.begin(), arr.end(), num) == arr.end())
+            return false;
+    }
+    
+    return true;
+}
