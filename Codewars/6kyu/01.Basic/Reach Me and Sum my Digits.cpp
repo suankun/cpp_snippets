@@ -69,3 +69,22 @@ int sumDigNthTerm(int initval, const std::vector<int>& patternl, int nthterm) {
     
     return sum_digits;
 }
+//
+#include <vector>
+using namespace std;
+
+int sumDigNthTerm(int initval, const vector<int> patternl, int nthterm) {
+    int tmpRes = initval;
+    int result = 0;
+    int size = patternl.size(); 
+    
+    for (int i = 0; i < size; i++)
+        tmpRes += (patternl[i] * ((nthterm - i - 2)/size + 1));
+    
+    while (tmpRes) {
+        result += tmpRes % 10;
+        tmpRes /= 10;
+    }
+
+    return result;
+}
