@@ -44,3 +44,12 @@ std::array<unsigned long, 3> multTriangle(const unsigned int n) {
     
     return {total_sum, total_even_sum, total_odd_sum};
 }
+//
+#include <array>
+
+std::array<unsigned long, 3> multTriangle(const unsigned long n) {
+    unsigned long total_sum = n*n * (n+1)*(n+1) / 4,
+                    total_odd_sum = (n+(n%2==1))*(n+(n%2==1))*(n+(n%2==1))*(n+(n%2==1))/16,
+                    total_even_sum = total_sum - total_odd_sum;
+    return {total_sum, total_even_sum, total_odd_sum};
+}
