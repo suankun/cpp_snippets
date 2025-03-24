@@ -33,3 +33,11 @@ std::array<std::string, 2> oneTwoThree(const unsigned int n) {
     
     return {firstPart, secondPart};
 }
+//
+#include <array>
+#include <string>
+
+std::array<std::string, 2> oneTwoThree(const unsigned int n) {
+    if (n < 1) return {"0", "0"};
+    return {(n > 9 ? std::string(n / 9, '9') : "") + ( n % 9 > 0 ? std::to_string(n % 9) : ""), std::string(n, '1')};
+}
