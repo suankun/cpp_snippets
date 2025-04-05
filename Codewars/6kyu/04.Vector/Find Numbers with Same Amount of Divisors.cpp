@@ -57,3 +57,20 @@ int main() {
     std::cout << countDivisors(13, 8759) << std::endl;
     return 0;
 }
+//
+#include <cmath>
+unsigned int countDivisors(const unsigned int diff, const unsigned int nMax) {
+    auto divideCount = [](int num) {
+        int count{};
+        for (int i = 1; i <= sqrt(num); i++) {
+            count += (num % i == 0) ? ((num / i == i) ? 1 : 2) : 0;
+        }
+        return count;
+    };
+
+    int count{};
+    for (int i = 0; i < nMax - diff; i++) {
+        if (divideCount(i) == divideCount(i + diff)) count++;
+    }
+    return count;
+}
