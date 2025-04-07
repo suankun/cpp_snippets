@@ -32,3 +32,19 @@ long long int lucasnum(int n) {
     std::unordered_map<int, long long int> memo;
     return lucasnum_helper(n, memo);
 }
+//
+#include <map>
+
+std::map<long long, long long> lns = {{-1, -1}, {0, 2}, {1, 1}};
+
+long long int lucasnum(int n){
+    if (lns.find(n) != lns.end()) return lns[n]; 
+    long long int result = 0;
+    if (n > 1) {
+        result = lucasnum(n - 2) + lucasnum(n - 1);
+    } else if (n < -1) {
+        result = lucasnum(n + 2) - lucasnum(n + 1);
+    } 
+    lns[n] = result;
+    return result;
+}
