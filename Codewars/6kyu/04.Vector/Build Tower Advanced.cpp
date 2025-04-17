@@ -54,3 +54,18 @@ std::vector<std::string> towerBuilder(int nFloors, int blockWidth, int blockHeig
 
     return tower;
 }
+//
+std::vector<std::string> towerBuilder(int nFloors, int blockWidth, int blockHeight)
+{
+    std::vector<std::string> tower;
+    
+    int fullHeight = blockHeight * nFloors, fullWidth = blockWidth * (nFloors * 2 - 1);
+    
+    for (int i = 0; i < fullHeight; i++) {
+        int full = blockWidth * (i / blockHeight * 2 + 1);
+        int empty = (fullWidth - full) / 2;
+        tower.push_back(std::string(empty, ' ') + std::string(full, '*') + std::string(empty, ' '));
+    }
+    
+    return tower;
+}
