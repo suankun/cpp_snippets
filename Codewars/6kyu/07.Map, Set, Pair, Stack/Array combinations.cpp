@@ -19,3 +19,16 @@ int solve(const std::vector<std::vector<int>> &data)
     }
     return result;
 }
+//
+#include <vector>
+#include <set>
+
+int solve(const std::vector<std::vector<int>> &data)
+{
+    int result = 1;
+    for(const auto& arr: data) {
+        std::set<int> s(arr.begin(), arr.end());
+        result *= s.size();
+    }
+    return result;
+}
