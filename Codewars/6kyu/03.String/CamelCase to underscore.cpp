@@ -80,3 +80,15 @@ public:
         return leading + result + trailing;
     };
 };
+//
+#include <regex>
+#include <string>
+
+using namespace std;
+class CamelCaseTranslator
+{
+    public: static std::string toUnderScore(std::string s)
+    {
+        return regex_replace(regex_replace(s,regex("\\B(\\d+|[A-Z])"), "_$1"), regex("__"), "_");
+    };
+};
