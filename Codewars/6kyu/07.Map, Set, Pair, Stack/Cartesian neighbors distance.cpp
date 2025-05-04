@@ -18,8 +18,8 @@ using std::set;
 
 vector<double> cartesianNeighborsDistance(int x, int y, int range) {
     set<double> distances;
-    for (int i = 1; i <= range; ++i) {
-        for (int j = 0; j <= i; ++j) {
+    for (int i = 1; i <= range; i++) {
+        for (int j = 0; j <= i; j++) {
             distances.insert(std::sqrt(i * i + j * j));
         }
     }
