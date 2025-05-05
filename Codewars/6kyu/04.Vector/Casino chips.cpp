@@ -26,3 +26,8 @@ int solve(std::vector<int> v) {
     int max_elem = *std::max_element(v.begin(), v.end());
     return std::min(total / 2, total - max_elem);
 }
+//
+int solve(std::vector<int> v){  
+    sort(v.begin(), v.end()); 
+    return std::min((v[0] + v[1] + v[2])/2|0, v[0] + v[1] );
+}
