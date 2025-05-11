@@ -47,3 +47,20 @@ std::string whitespace_number(int n)
     result += '\n';
     return result;
 }
+//
+#include <string>
+#include <bitset>
+#include <cmath>
+
+std::string whitespace_number(int n)
+{
+    std::string s = std::bitset<32>(abs(n)).to_string(), ret = "";
+    s.erase(0, s.find('1'));
+    ret += (n < 0) ? '\t' : ' ';
+
+    for (auto e : s)
+        ret += std::string(1, e == '0' ? ' ' : '\t');
+        
+    ret += '\n';
+    return ret;
+}
