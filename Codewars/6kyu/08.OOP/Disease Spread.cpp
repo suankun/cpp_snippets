@@ -55,3 +55,25 @@ public:
         return static_cast<int>(maxI);
     }
 };
+//
+// #include <cmath>
+// #include <vector>
+// class Epidem
+// {
+// public:
+
+//     static int epidemic(int tm, int n, int s0, int i0, double b, double a) {
+//         double dt = static_cast<double>(tm) / n;
+//         std::vector<double> S(n + 1), I(n + 1), R(n + 1);
+//         S[0] = s0;
+//         I[0] = i0;
+//         R[0] = 0;
+//         for (int k = 0; k < n; ++k) {
+//             S[k + 1] = S[k] - dt * b * S[k] * I[k];
+//             I[k + 1] = I[k] + dt * (b * S[k] * I[k] - a * I[k]);
+//             R[k + 1] = R[k] + dt * I[k] * a;
+//         }
+//         return static_cast<int>(*std::max_element(I.begin(), I.end()));
+//     }
+
+// };
