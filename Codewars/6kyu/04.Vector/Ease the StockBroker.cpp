@@ -115,3 +115,53 @@ public:
         return result.str();
     }
 };
+//
+#include <regex>
+#include <sstream>
+#include <cmath>
+using namespace std;
+using namespace std::literals;
+
+class OrdersSummary
+{
+public:
+    static std::string balanceStatements(const std::string &lst)
+    {
+      istringstream iss(lst);
+      vector<string> items;
+      for (string item; getline(iss, item, ',');)
+        items.emplace_back(item);
+      string pattern = R"(^\s*.+?\s+(\d+?)\s+(\d*?\.\d+?)\s+([BS])\s*$)"s;
+      regex re(pattern);
+      regex trim(R"(^\s*(.+?)\s*$)"s);
+      int iBuy = 0, iSell = 0;
+      vector<string> bad;
+      for (auto it = items.begin(); it != items.end(); it++)
+      {
+        smatch sm;
+        if (regex_search(*it, sm, re))
+        {
+          if (sm[3] == "B"s)
+            iBuy += round(stoi(sm[1]) * stod(sm[2]));
+          else
+            iSell += round(stoi(sm[1]) * stod(sm[2]));
+        }
+        else
+        {
+          regex_search(*it, sm, trim);
+          bad.emplace_back(sm[1]);
+        }
+      }
+      ostringstream oss;
+      oss << "Buy: " << iBuy << " Sell: " << iSell;
+      if (!bad.empty())
+      {
+        oss << "; Badly formed " << bad.size() << ": ";
+        for (const auto &item : bad)
+        {
+          oss << item << " ;";
+        }
+      }
+      return oss.str();
+    }
+};
